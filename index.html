@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrainFirst Nigeria: Finally, answers that make sense</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FBF6ED;
+    --ink:#1C1A17;
+    --ochre:#C98A2C;
+    --ochre-deep:#A66E1F;
+    --teal:#1F4B43;
+    --muted:#8B8478;
+    --line:#D8CFBE;
+    --card:#F3ECDD;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- Nav ---------- */
+  nav{
+    border-bottom:1px solid var(--line);
+    position:sticky; top:0; z-index:50;
+    background:rgba(251,246,237,0.92);
+    backdrop-filter:blur(6px);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:72px;
+  }
+  .logo{
+    font-family:'Fraunces', serif;
+    font-size:1.15rem;
+    font-weight:600;
+    display:flex; align-items:center; gap:9px;
+  }
+  .logo-mark{
+    width:26px;height:26px;
+    flex-shrink:0;
+    object-fit:contain;
+  }
+  .nav-links{
+    display:flex; gap:32px; font-size:0.93rem;
+  }
+  .nav-links a{ color:var(--muted); transition:color .15s; }
+  .nav-links a:hover{ color:var(--ink); }
+  .nav-cta{
+    background:var(--ink);
+    color:var(--bg);
+    padding:10px 20px;
+    border-radius:2px;
+    font-size:0.88rem;
+    font-weight:500;
+    white-space:nowrap;
+  }
+  .nav-mobile-hide{ display:flex; }
+  @media (max-width:760px){
+    .nav-links{ display:none; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:72px 0 60px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:56px;
+    align-items:center;
+  }
+  .hero-eyebrow{
+    color:var(--teal);
+    font-size:0.88rem;
+    margin-bottom:18px;
+    display:block;
+  }
+  .hero h1{
+    font-size:clamp(2.1rem, 4.4vw, 3.4rem);
+    line-height:1.08;
+    max-width:12ch;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--ochre-deep);
+  }
+  .hero-sub{
+    margin-top:22px;
+    max-width:44ch;
+    font-size:1.06rem;
+    line-height:1.6;
+    color:#3A362F;
+  }
+  .hero-actions{
+    margin-top:32px;
+    display:flex;
+    align-items:center;
+    gap:22px;
+    flex-wrap:wrap;
+  }
+  .btn-primary{
+    background:var(--ochre);
+    color:#fff;
+    padding:14px 26px;
+    font-size:0.95rem;
+    font-weight:500;
+    border-radius:2px;
+    display:inline-block;
+    transition:background .15s;
+  }
+  .btn-primary:hover{ background:var(--ochre-deep); }
+  .btn-secondary{
+    border:1px solid var(--teal);
+    color:var(--teal);
+    padding:13px 25px;
+    font-size:0.95rem;
+    font-weight:500;
+    border-radius:2px;
+    display:inline-block;
+    transition:background .15s, color .15s;
+  }
+  .btn-secondary:hover{ background:var(--teal); color:var(--bg); }
+  .hero-trust{
+    font-size:0.85rem;
+    color:var(--muted);
+  }
+
+  /* scatter-to-grid visual */
+  .visual{
+    position:relative;
+    aspect-ratio:1/1;
+  }
+  .dotgrid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    grid-template-rows:repeat(7,1fr);
+    width:100%; height:100%;
+  }
+  .dotgrid span{
+    align-self:center; justify-self:center;
+    border-radius:50%;
+    background:var(--ochre);
+  }
+  .visual-caption{
+    position:absolute;
+    bottom:-30px; left:0; right:0;
+    text-align:center;
+    font-size:0.78rem;
+    color:var(--muted);
+  }
+
+  @media (max-width:900px){
+    .hero{ padding:48px 0 44px; }
+    .hero .wrap{
+      grid-template-columns:1fr;
+      gap:40px;
+    }
+    .hero h1{
+      max-width:14ch;
+      font-size:clamp(2rem, 8vw, 2.6rem);
+    }
+    .hero-sub{ max-width:none; }
+    .hero-actions{ gap:16px; }
+    .hero-trust{ width:100%; }
+    .visual{
+      max-width:260px;
+      margin:0 auto 30px;
+      aspect-ratio:1/1;
+    }
+    .visual-caption{ bottom:-26px; }
+  }
+  @media (max-width:420px){
+    .hero-eyebrow{ font-size:0.8rem; }
+    .hero h1{ font-size:1.85rem; max-width:none; }
+    .hero-sub{ font-size:0.98rem; }
+    .btn-primary, .btn-secondary{ width:100%; text-align:center; }
+    .hero-actions{ flex-direction:column; align-items:flex-start; gap:14px; }
+  }
+
+  /* ---------- Who we work with ---------- */
+  .audience{
+    padding:76px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:24px;
+    margin-bottom:44px;
+    flex-wrap:wrap;
+  }
+  .section-head h2{
+    font-size:clamp(1.5rem,2.6vw,2rem);
+    max-width:16ch;
+  }
+  .section-head p{
+    max-width:34ch;
+    color:var(--muted);
+    font-size:0.95rem;
+    line-height:1.55;
+  }
+  .audience-list{
+    display:flex;
+    flex-direction:column;
+  }
+  .audience-row{
+    display:grid;
+    grid-template-columns:60px 1.3fr 1.7fr;
+    gap:28px;
+    padding:30px 0;
+    border-top:1px solid var(--line);
+    align-items:baseline;
+  }
+  .audience-row:last-child{ border-bottom:1px solid var(--line); }
+  .audience-num{
+    font-family:'Fraunces', serif;
+    color:var(--ochre);
+    font-size:1.1rem;
+  }
+  .audience-row h3{
+    font-size:1.25rem;
+    font-weight:500;
+  }
+  .audience-row p{
+    color:#4A463D;
+    font-size:0.96rem;
+    line-height:1.6;
+  }
+  @media (max-width:700px){
+    .audience-row{
+      grid-template-columns:1fr;
+      gap:8px;
+    }
+    .audience-num{ order:-1; }
+  }
+
+  /* ---------- Framework ---------- */
+  .framework{
+    padding:76px 0;
+    background:var(--card);
+    border-bottom:1px solid var(--line);
+  }
+  .fw-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    margin-top:44px;
+  }
+  .fw-card{
+    background:var(--card);
+    padding:34px 30px;
+  }
+  .fw-tag{
+    font-size:0.8rem;
+    color:var(--teal);
+    margin-bottom:10px;
+    display:block;
+  }
+  .fw-card h3{
+    font-size:1.35rem;
+    margin-bottom:12px;
+  }
+  .fw-card p{
+    color:#4A463D;
+    font-size:0.95rem;
+    line-height:1.65;
+  }
+  @media (max-width:700px){
+    .fw-grid{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- Testimonials ---------- */
+  .testimonials{
+    padding:76px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .quote-stack{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    margin-top:44px;
+  }
+  .quote-card{
+    background:var(--bg);
+    padding:32px 28px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height:230px;
+  }
+  .quote-card q{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:1.1rem;
+    line-height:1.5;
+    quotes:none;
+  }
+  .quote-attr{
+    margin-top:22px;
+    font-size:0.85rem;
+    color:var(--muted);
+  }
+  @media (max-width:820px){
+    .quote-stack{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- Founder ---------- */
+  .founder{
+    padding:76px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .founder .wrap{
+    display:grid;
+    grid-template-columns:0.55fr 1fr;
+    gap:56px;
+    align-items:center;
+  }
+  .founder-photo img{
+    width:100%;
+    max-width:320px;
+    margin:0 auto;
+    border-radius:2px;
+  }
+  .founder-eyebrow{
+    color:var(--teal);
+    font-size:0.85rem;
+    display:block;
+    margin-bottom:14px;
+  }
+  .founder-copy h2{
+    font-size:clamp(1.5rem,2.8vw,2.1rem);
+    line-height:1.18;
+  }
+  .founder-copy p{
+    margin-top:18px;
+    max-width:52ch;
+    color:#3A362F;
+    font-size:1rem;
+    line-height:1.65;
+  }
+  .founder-copy p + p{ margin-top:16px; }
+  .founder-sign{
+    margin-top:22px;
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    color:var(--ochre-deep);
+    font-size:1.05rem;
+  }
+  @media (max-width:820px){
+    .founder .wrap{
+      grid-template-columns:1fr;
+      text-align:center;
+    }
+    .founder-copy p{ margin-left:auto; margin-right:auto; }
+  }
+
+  /* ---------- Book promo ---------- */
+  .book-promo{
+    padding:76px 0;
+    background:var(--card);
+    border-bottom:1px solid var(--line);
+  }
+  .book-promo .wrap{
+    display:grid;
+    grid-template-columns:0.55fr 1fr;
+    gap:56px;
+    align-items:center;
+  }
+  .book-cover img{
+    width:100%;
+    max-width:280px;
+    margin:0 auto;
+    box-shadow:0 24px 48px rgba(28,26,23,0.18);
+  }
+  .book-eyebrow{
+    color:var(--teal);
+    font-size:0.85rem;
+    display:block;
+    margin-bottom:14px;
+  }
+  .book-copy h2{
+    font-size:clamp(1.5rem,2.8vw,2.1rem);
+    line-height:1.18;
+    max-width:16ch;
+  }
+  .book-copy p{
+    margin-top:18px;
+    max-width:48ch;
+    color:#3A362F;
+    font-size:1rem;
+    line-height:1.6;
+  }
+  .book-author{
+    margin-top:20px;
+    font-size:0.88rem;
+    color:var(--muted);
+  }
+  .book-copy .btn-primary{
+    margin-top:28px;
+  }
+  @media (max-width:820px){
+    .book-promo .wrap{
+      grid-template-columns:1fr;
+      text-align:center;
+    }
+    .book-copy p{ margin-left:auto; margin-right:auto; }
+  }
+
+  /* ---------- Booking banner ---------- */
+  .booking{
+    padding:88px 0;
+    background:var(--teal);
+    color:var(--bg);
+    text-align:center;
+  }
+  .booking h2{
+    font-size:clamp(1.8rem,3.6vw,2.6rem);
+    max-width:18ch;
+    margin:0 auto;
+    line-height:1.15;
+  }
+  .booking p{
+    color:#C9DCD6;
+    max-width:42ch;
+    margin:18px auto 32px;
+    font-size:1rem;
+    line-height:1.6;
+  }
+  .btn-light{
+    background:var(--bg);
+    color:var(--ink);
+    padding:15px 30px;
+    border-radius:2px;
+    font-weight:500;
+    display:inline-block;
+  }
+  .booking-options{
+    margin-top:38px;
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+    font-size:0.85rem;
+  }
+  .booking-options span{
+    border:1px solid rgba(251,246,237,0.35);
+    padding:8px 16px;
+    border-radius:20px;
+    color:#DCEAE6;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{ padding:48px 0; }
+  footer .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:16px;
+  }
+  footer .logo{ font-size:1rem; }
+  .footer-links{
+    display:flex; gap:26px; font-size:0.85rem; color:var(--muted);
+  }
+  .footer-fine{
+    font-size:0.8rem; color:var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo"><img class="logo-mark" src="logo-icon.png" alt="BrainFirst Nigeria">BrainFirst Nigeria</div>
+    <div class="nav-links">
+      <a href="#audience">Who we work with</a>
+      <a href="#framework">Our approach</a>
+      <a href="#testimonials">Stories</a>
+      <a href="#founder">Founder</a>
+      <a href="#the-excitement-cycle">The Book</a>
+    </div>
+    <a href="https://calendly.com/filanioluwaseun45" class="nav-cta" target="_blank" rel="noopener">Book a session</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="hero-eyebrow">ADHD &amp; Neurodiversity · African Lens, Global Impact</span>
+      <h1>Different minds need to be understood <em>differently.</em></h1>
+      <p class="hero-sub">Africa's first ADHD-specialised coaching and consulting brand, for adults who've been called lazy, scattered, or told to "just focus more," and for founders running on decision fatigue before it burns them out.</p>
+      <div class="hero-actions">
+        <a href="https://calendly.com/filanioluwaseun45" class="btn-primary" target="_blank" rel="noopener">Book a session</a>
+        <a href="https://chat.whatsapp.com/DuC47SE2hk8J4r2P0HH4SQ" class="btn-secondary" target="_blank" rel="noopener">Join WhatsApp community</a>
+        <span class="hero-trust">3,500+ following the work · 500+ practitioner network</span>
+      </div>
+    </div>
+    <div class="visual">
+      <div class="dotgrid" id="dotgrid"></div>
+      <div class="visual-caption">from cognitive overload to clarity</div>
+    </div>
+  </div>
+</header>
+
+<section class="audience" id="audience">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Who we work with</h2>
+      <p>Three kinds of minds, three different starting points, one framework underneath.</p>
+    </div>
+    <div class="audience-list">
+      <div class="audience-row">
+        <span class="audience-num">01</span>
+        <h3>Individuals</h3>
+        <p>Diagnosed or not, people who've spent years being told to try harder. We build focus and follow-through using the CLEAR Framework, not willpower.</p>
+      </div>
+      <div class="audience-row">
+        <span class="audience-num">02</span>
+        <h3>Founders &amp; executives</h3>
+        <p>Running on cognitive overload. The Founder Brain Audit gets under the hood of your decision fatigue before it costs you the business.</p>
+      </div>
+      <div class="audience-row">
+        <span class="audience-num">03</span>
+        <h3>Organisations</h3>
+        <p>Teams that need to actually perform. The Cognitive Load Organisational Model (CLOM) redesigns how work gets assigned, paced, and protected.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="framework" id="framework">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>The frameworks behind the coaching</h2>
+      <p>Not generic productivity advice: built specifically around how ADHD and cognitive overload actually work.</p>
+    </div>
+    <div class="fw-grid">
+      <div class="fw-card">
+        <span class="fw-tag">For individuals</span>
+        <h3>The CLEAR Framework</h3>
+        <p>A structured system for building focus and follow-through around how your brain actually works, not against it. Used across 1:1 coaching, therapy-adjacent support, and consulting engagements.</p>
+      </div>
+      <div class="fw-card">
+        <span class="fw-tag">For organisations</span>
+        <h3>Cognitive Load Organisational Model</h3>
+        <p>A model for redesigning team workflows around real cognitive capacity, so performance stops depending on who can mask exhaustion best.</p>
+      </div>
+      <div class="fw-card">
+        <span class="fw-tag">For founders</span>
+        <h3>Founder Brain Audit</h3>
+        <p>A close look at your decision-making load before burnout forces the audit for you.</p>
+      </div>
+      <div class="fw-card">
+        <span class="fw-tag">Before you commit</span>
+        <h3>Screening bundle</h3>
+        <p>Attention, burnout, RSD, and decision fatigue screening: clarity before you book a full engagement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What it's like to work with us</h2>
+      <p>Real words from people who came in scattered and left with a system.</p>
+    </div>
+    <div class="quote-stack">
+      <div class="quote-card">
+        <q>I am more relaxed and ready to continue my academic and professional journey. I'd recommend BrainFirst to anyone, she's dedicated and knows the profession very well.</q>
+        <span class="quote-attr">Individual coaching client</span>
+      </div>
+      <div class="quote-card">
+        <q>I now have greater clarity and awareness, along with practical strategies that have truly made a difference in how I approach situations. BrainFirst's approach is practical, insightful, and genuinely supportive.</q>
+        <span class="quote-attr">Individual coaching client</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="founder" id="founder">
+  <div class="wrap">
+    <div class="founder-photo">
+      <img src="founder-photo.jpg" alt="Founder of BrainFirst Nigeria">
+    </div>
+    <div class="founder-copy">
+      <span class="founder-eyebrow">Founder's story</span>
+      <h2>Built from lived experience, not borrowed theory.</h2>
+      <p>I'm the founder of BrainFirst Nigeria, a brand built from my own experience with ADHD and the years I spent confused about myself before I finally had a name for it. That diagnosis handed me answers, but also showed me how little awareness exists around mental health in Nigeria, and how much stigma fills that gap for everyone who never gets the chance to understand themselves the way I did.</p>
+      <p>Today, I work with individuals, founders, and organizations through coaching, therapy, and community, helping Nigerians make sense of minds like mine, from our own context, not one borrowed from somewhere else. I also wrote <em>The Excitement Cycle</em>, a book for anyone living with ADHD who has big ideas but struggles to see them through.</p>
+      <div class="founder-sign">Finally, answers that make sense.</div>
+    </div>
+  </div>
+</section>
+
+<section class="book-promo" id="the-excitement-cycle">
+  <div class="wrap">
+    <div class="book-cover">
+      <img src="excitement-cycle-cover.jpg" alt="The Excitement Cycle: An ADHD Playbook for Turning Sparks Into Results, by Filani (Ademuyiwa) Oluwaseun">
+    </div>
+    <div class="book-copy">
+      <span class="book-eyebrow">A Playbook for the ADHD Mind</span>
+      <h2>The Excitement Cycle</h2>
+      <p>An ADHD playbook for turning sparks into results, mapping how excitement, momentum, and follow-through actually work in the ADHD brain, and how to ride the cycle instead of fighting it.</p>
+      <div class="book-author">Filani (Ademuyiwa) Oluwaseun · Founder, BrainFirst Nigeria</div>
+      <a href="https://selar.com/m/brainfirstnigeria" class="btn-primary" target="_blank" rel="noopener">Get the book</a>
+    </div>
+  </div>
+</section>
+
+<section class="booking" id="book">
+  <div class="wrap">
+    <h2>Finally, answers that make sense.</h2>
+    <p>Book the session that matches where you're starting from, no generic intake, straight to the right conversation.</p>
+    <a href="https://calendly.com/filanioluwaseun45" class="btn-light" target="_blank" rel="noopener">Choose your session</a>
+    <div class="booking-options">
+      <span>1:1 Coaching</span>
+      <span>Founder Brain Audit</span>
+      <span>Organisational Consulting</span>
+      <span>Screening Bundle</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo"><img class="logo-mark" src="logo-icon.png" alt="BrainFirst Nigeria">BrainFirst Nigeria</div>
+    <div class="footer-links">
+      <a href="mailto:brainfirstnigeria@gmail.com">Email</a>
+      <a href="https://chat.whatsapp.com/DuC47SE2hk8J4r2P0HH4SQ" target="_blank" rel="noopener">WhatsApp Community</a>
+      <a href="#">Instagram</a>
+      <a href="https://www.linkedin.com/in/filani-oluwaseun-75115a18a" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#">TikTok</a>
+    </div>
+    <div class="footer-fine">Lagos, Nigeria</div>
+  </div>
+</footer>
+
+<script>
+  // Build the 7x7 scatter-to-clarity dot grid: left columns loose and irregular,
+  // right columns settle into a calm, even grid.
+  const grid = document.getElementById('dotgrid');
+  const cols = 7, rows = 7;
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const dot = document.createElement('span');
+      const chaos = 1 - (c / (cols - 1)); // 1 = most chaotic (left), 0 = ordered (right)
+      const seed = (r * 13 + c * 7) % 11 / 10; // pseudo-random, deterministic
+      const size = 6 + chaos * 10 * seed + (1 - chaos) * 2;
+      const jitterX = (seed - 0.5) * 22 * chaos;
+      const jitterY = (((r * 5 + c * 3) % 7) / 7 - 0.5) * 22 * chaos;
+      const opacity = 0.25 + (1 - chaos) * 0.65 + seed * 0.1;
+      const color = chaos > 0.4 ? 'var(--ochre)' : 'var(--teal)';
+      dot.style.width = size + 'px';
+      dot.style.height = size + 'px';
+      dot.style.transform = `translate(${jitterX}px, ${jitterY}px)`;
+      dot.style.opacity = Math.min(opacity, 1);
+      dot.style.background = color;
+      grid.appendChild(dot);
+    }
+  }
+</script>
+
+<script>
+  // ---------- Sanity content: featured testimonials ----------
+  // TODO: fill these in from manage.sanity.io (Project settings -> API)
+  const SANITY_PROJECT_ID = 'YOUR_PROJECT_ID';
+  const SANITY_DATASET = 'production';
+  const SANITY_API_VERSION = '2024-01-01';
+
+  function escapeHtml(str) {
+    return String(str ?? '').replace(/[&<>"']/g, (c) => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+    }[c]));
+  }
+
+  async function sanityFetch(query) {
+    if (SANITY_PROJECT_ID === 'YOUR_PROJECT_ID') {
+      throw new Error('Set SANITY_PROJECT_ID before fetching content.');
+    }
+    const base = `https://${SANITY_PROJECT_ID}.api.sanity.io/v${SANITY_API_VERSION}/data/query/${SANITY_DATASET}`;
+    const url = `${base}?query=${encodeURIComponent(query)}`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Sanity fetch failed: ${res.status}`);
+    const { result } = await res.json();
+    return result;
+  }
+
+  // Featured testimonials, in `order` (matches testimonial.js), text-only for the homepage stack
+  async function loadTestimonials() {
+    const query = `*[_type == "testimonial" && featured == true && mediaType == "text"] | order(order asc) [0...3]{quote, attributionName, attributionRole}`;
+    try {
+      const testimonials = await sanityFetch(query);
+      if (!testimonials || testimonials.length === 0) return; // keep placeholder cards
+      const stack = document.querySelector('.quote-stack');
+      stack.innerHTML = testimonials.map((t) => `
+        <div class="quote-card">
+          <q>${escapeHtml(t.quote)}</q>
+          <span class="quote-attr">${t.attributionName ? escapeHtml(t.attributionName) + ', ' : ''}${escapeHtml(t.attributionRole)}</span>
+        </div>
+      `).join('');
+    } catch (err) {
+      console.error('Could not load testimonials from Sanity:', err);
+    }
+  }
+
+  loadTestimonials();
+</script>
+
+</body>
+</html>
