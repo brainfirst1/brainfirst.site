@@ -335,6 +335,44 @@
     .quote-stack{ grid-template-columns:1fr; }
   }
 
+  /* ---------- Featured article ---------- */
+  .featured{
+    padding:76px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .featured-card{
+    border:1px solid var(--line);
+    background:var(--card);
+    padding:40px 36px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:36px;
+    flex-wrap:wrap;
+  }
+  .featured-copy{ max-width:62ch; }
+  .featured-tag{
+    color:var(--teal);
+    font-size:0.85rem;
+    display:block;
+    margin-bottom:12px;
+  }
+  .featured-copy h3{
+    font-size:clamp(1.35rem,2.4vw,1.75rem);
+    line-height:1.2;
+  }
+  .featured-copy p{
+    margin-top:12px;
+    color:#4A463D;
+    font-size:0.96rem;
+    line-height:1.6;
+  }
+  .featured-card .btn-primary{ white-space:nowrap; }
+  @media (max-width:700px){
+    .featured-card{ padding:30px 22px; }
+    .featured-card .btn-primary{ width:100%; text-align:center; }
+  }
+
   /* ---------- Founder ---------- */
   .founder{
     padding:76px 0;
@@ -605,6 +643,23 @@
         <q>I now have greater clarity and awareness, along with practical strategies that have truly made a difference in how I approach situations. BrainFirst's approach is practical, insightful, and genuinely supportive.</q>
         <span class="quote-attr">Individual coaching client</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured" id="featured">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Featured writing</h2>
+      <p>Our founder's perspective on ADHD and work in Nigeria, published internationally.</p>
+    </div>
+    <div class="featured-card">
+      <div class="featured-copy">
+        <span class="featured-tag">Guest article on Neurodiversity in Business</span>
+        <h3>A &ldquo;Western Thing&rdquo;: ADHD, Stigma and the Nigerian Workplace</h3>
+        <p>Why ADHD is dismissed as imported, how stigma shapes working life in Nigeria, and what employers can do differently.</p>
+      </div>
+      <a href="https://neurodiversity.org/a-western-thing-adhd-stigma-and-the-nigerian-workplace/" class="btn-primary" target="_blank" rel="noopener">Read the article</a>
     </div>
   </div>
 </section>
