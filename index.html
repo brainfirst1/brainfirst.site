@@ -551,8 +551,10 @@
     --ci-alert-bg:#FFEFDD;
     --ci-alert-line:#8A3B12;
     --ci-alert-ink:#4A2208;
-    padding:76px 0;
-    border-bottom:1px solid var(--line);
+    background:var(--teal);
+    color:var(--bg);
+    padding:92px 0;
+    scroll-margin-top:72px;
   }
   #check-in .ci-grid{
     display:grid;
@@ -560,16 +562,20 @@
     gap:56px;
     align-items:start;
   }
-  #check-in .ci-eyebrow{ color:var(--teal); font-size:0.85rem; display:block; margin-bottom:14px; }
-  #check-in .ci-intro h2{ font-size:clamp(1.5rem,2.8vw,2.1rem); line-height:1.18; max-width:14ch; }
-  #check-in .ci-intro-text{ margin-top:18px; max-width:44ch; color:var(--ci-body); font-size:1rem; line-height:1.65; }
+  #check-in .ci-eyebrow{ color:#BBD3CC; font-size:0.88rem; display:block; margin-bottom:18px; }
+  #check-in .ci-intro h2{ font-size:clamp(2.7rem,6.4vw,4.7rem); line-height:1.0; letter-spacing:-0.02em; color:var(--bg); }
+  #check-in .ci-intro h2 em{ font-style:italic; color:#E8B04F; }
+  #check-in .ci-chips{ margin-top:26px; display:flex; gap:10px; flex-wrap:wrap; }
+  #check-in .ci-chips span{ border:1px solid rgba(251,246,237,0.4); padding:7px 16px; border-radius:20px; font-size:0.85rem; color:#DCEAE6; }
+  #check-in .ci-intro-text{ margin-top:22px; max-width:44ch; color:#DCEAE6; font-size:1.08rem; line-height:1.65; }
   #check-in .ci-intro-note{ margin-top:14px; max-width:44ch; color:#6B655A; font-size:0.88rem; line-height:1.55; }
   #check-in .ci-box{
-    border:1px solid var(--line);
-    background:var(--card);
-    padding:36px 34px;
+    background:var(--bg);
+    color:var(--ink);
+    padding:38px 36px;
     min-height:300px;
     scroll-margin-top:92px;
+    box-shadow:0 28px 70px rgba(0,0,0,0.28);
   }
   #check-in .ci-box:focus{ outline:none; }
 
@@ -667,9 +673,8 @@
   #check-in .ci-bridge p{ color:var(--ci-body); font-size:0.98rem; line-height:1.65; margin-bottom:18px; }
 
   @media (max-width:900px){
-    #check-in{ padding:56px 0; }
-    #check-in .ci-grid{ grid-template-columns:1fr; gap:32px; }
-    #check-in .ci-intro h2{ max-width:none; }
+    #check-in{ padding:60px 0; }
+    #check-in .ci-grid{ grid-template-columns:1fr; gap:34px; }
   }
   @media (max-width:600px){
     #check-in .ci-box{ padding:24px 18px; }
@@ -687,6 +692,26 @@
     body.ci-printing #check-in .ci-actions,
     body.ci-printing #check-in .ci-intro-note{ display:none !important; }
   }
+  /* Check-in visibility: hero button, nav highlight, floating button */
+  .btn-checkin{ background:var(--teal); }
+  .btn-checkin:hover{ background:#163630 !important; }
+  .nav-links a.nav-ci{ color:var(--teal); font-weight:600; }
+  .nav-links a.nav-ci::before{ content:""; display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--ochre); margin-right:8px; vertical-align:middle; }
+  .ci-float{
+    position:fixed; right:20px; bottom:20px; z-index:40;
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--teal); color:var(--bg);
+    padding:14px 22px; border-radius:999px;
+    font-size:0.92rem; font-weight:500;
+    box-shadow:0 10px 30px rgba(31,75,67,0.35);
+    transition:opacity .2s, transform .2s, visibility .2s, background .15s;
+  }
+  .ci-float::before{ content:""; width:9px; height:9px; border-radius:50%; background:#E8B04F; flex:none; }
+  .ci-float:hover{ background:#163630; }
+  .ci-float:focus-visible{ outline:3px solid var(--ochre-deep); outline-offset:3px; }
+  .ci-float.is-hidden{ opacity:0; visibility:hidden; transform:translateY(8px); pointer-events:none; }
+  @media (max-width:600px){ .ci-float{ right:14px; bottom:14px; padding:12px 18px; font-size:0.88rem; } }
+  @media print{ .ci-float{ display:none !important; } }
 </style>
 </head>
 <body>
@@ -700,7 +725,7 @@
       <a href="#testimonials">Stories</a>
       <a href="#founder">Founder</a>
       <a href="#the-excitement-cycle">The Book</a>
-      <a href="#check-in">Free check-in</a>
+      <a href="#check-in" class="nav-ci">Free check-in</a>
     </div>
     <a href="https://calendly.com/filanioluwaseun45" class="nav-cta" target="_blank" rel="noopener">Book a session</a>
   </div>
@@ -713,6 +738,7 @@
       <h1>Different minds need to be understood <em>differently.</em></h1>
       <p class="hero-sub">Africa's first ADHD-specialised coaching and consulting brand, for adults who've been called lazy, scattered, or told to "just focus more," and for founders running on decision fatigue before it burns them out.</p>
       <div class="hero-actions">
+        <a href="#check-in" class="btn-primary btn-checkin">Take the free check-in</a>
         <a href="https://calendly.com/filanioluwaseun45" class="btn-primary" target="_blank" rel="noopener">Book a session</a>
         <a href="https://chat.whatsapp.com/DuC47SE2hk8J4r2P0HH4SQ" class="btn-secondary" target="_blank" rel="noopener">Join WhatsApp community</a>
         <span class="hero-trust">3,500+ following the work · 500+ practitioner network</span>
@@ -724,6 +750,28 @@
     </div>
   </div>
 </header>
+
+<section id="check-in">
+  <div class="wrap">
+    <div class="ci-grid">
+      <div class="ci-intro">
+        <span class="ci-eyebrow">Free Mind &amp; Mood Check-in · Not a diagnosis</span>
+        <h2>Check your <em>mind.</em></h2>
+        <p class="ci-intro-text" id="ciIntro"></p>
+        <div class="ci-chips"><span>Free</span><span>Private</span><span>No sign-up</span></div>
+      </div>
+      <div class="ci-box" id="ciBox" tabindex="-1">
+        <div id="ciProgressWrap" hidden>
+          <div class="ci-progress" role="progressbar" aria-label="Check-in progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="ciBar"><div id="ciBarFill"></div></div>
+          <p class="ci-progress-label" id="ciBarLabel"></p>
+        </div>
+        <div id="ciApp" aria-live="polite"></div>
+        <noscript><p>This check-in needs JavaScript. Please turn it on, or <a href="mailto:brainfirstnigeria@gmail.com">email us</a>.</p></noscript>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section class="audience" id="audience">
   <div class="wrap">
@@ -778,26 +826,6 @@
         <h3>Screening bundle</h3>
         <p>Attention, burnout, RSD, and decision fatigue screening: clarity before you book a full engagement.</p>
         <a href="#check-in" class="fw-link">Take the free Mind &amp; Mood check-in</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="check-in">
-  <div class="wrap">
-    <div class="ci-grid">
-      <div class="ci-intro">
-        <span class="ci-eyebrow">Free check-in · Not a diagnosis</span>
-        <h2>Mind &amp; Mood Check-in</h2>
-        <p class="ci-intro-text" id="ciIntro"></p>
-      </div>
-      <div class="ci-box" id="ciBox" tabindex="-1">
-        <div id="ciProgressWrap" hidden>
-          <div class="ci-progress" role="progressbar" aria-label="Check-in progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="ciBar"><div id="ciBarFill"></div></div>
-          <p class="ci-progress-label" id="ciBarLabel"></p>
-        </div>
-        <div id="ciApp" aria-live="polite"></div>
-        <noscript><p>This check-in needs JavaScript. Please turn it on, or <a href="mailto:brainfirstnigeria@gmail.com">email us</a>.</p></noscript>
       </div>
     </div>
   </div>
@@ -896,6 +924,8 @@
     <div class="footer-fine">Lagos, Nigeria</div>
   </div>
 </footer>
+
+<a href="#check-in" class="ci-float" id="ciFloat">Free mind check-in</a>
 
 <script>
   // Build the 7x7 scatter-to-clarity dot grid: left columns loose and irregular,
@@ -1431,6 +1461,15 @@ function screenResults(){
 window.addEventListener("afterprint",()=>document.body.classList.remove("ci-printing"));
 
 screenConsent();
+})();
+</script>
+
+<script>
+// Floating check-in button: visible everywhere except while the check-in itself is on screen
+(function(){
+  var f=document.getElementById('ciFloat'), sec=document.getElementById('check-in');
+  if(!f||!sec||!('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function(e){ f.classList.toggle('is-hidden', e[0].isIntersecting); },{threshold:0.2}).observe(sec);
 })();
 </script>
 
