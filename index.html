@@ -534,6 +534,159 @@
   .footer-fine{
     font-size:0.8rem; color:var(--muted);
   }
+  /* ---------- Free Mind & Mood check-in (all rules scoped to #check-in) ---------- */
+  .fw-link{
+    display:inline-block;
+    margin-top:16px;
+    font-size:0.92rem;
+    font-weight:500;
+    color:var(--teal);
+    border-bottom:1px solid var(--teal);
+  }
+  .fw-link:hover{ color:var(--ochre-deep); border-color:var(--ochre-deep); }
+
+  #check-in{
+    --ci-tint:#E3E9DF;
+    --ci-body:#3A362F;
+    --ci-alert-bg:#FFEFDD;
+    --ci-alert-line:#8A3B12;
+    --ci-alert-ink:#4A2208;
+    padding:76px 0;
+    border-bottom:1px solid var(--line);
+  }
+  #check-in .ci-grid{
+    display:grid;
+    grid-template-columns:0.8fr 1.2fr;
+    gap:56px;
+    align-items:start;
+  }
+  #check-in .ci-eyebrow{ color:var(--teal); font-size:0.85rem; display:block; margin-bottom:14px; }
+  #check-in .ci-intro h2{ font-size:clamp(1.5rem,2.8vw,2.1rem); line-height:1.18; max-width:14ch; }
+  #check-in .ci-intro-text{ margin-top:18px; max-width:44ch; color:var(--ci-body); font-size:1rem; line-height:1.65; }
+  #check-in .ci-intro-note{ margin-top:14px; max-width:44ch; color:#6B655A; font-size:0.88rem; line-height:1.55; }
+  #check-in .ci-box{
+    border:1px solid var(--line);
+    background:var(--card);
+    padding:36px 34px;
+    min-height:300px;
+    scroll-margin-top:92px;
+  }
+  #check-in .ci-box:focus{ outline:none; }
+
+  #check-in .ci-progress{ height:4px; background:var(--line); overflow:hidden; margin:0 0 10px; }
+  #check-in .ci-progress > div{ height:100%; width:0; background:var(--teal); transition:width .35s ease; }
+  #check-in .ci-progress-label{ font-size:0.85rem; color:#6B655A; margin:0 0 26px; min-height:1.4em; }
+
+  #check-in .ci-title{ font-family:'Fraunces',serif; font-weight:500; letter-spacing:-0.01em; font-size:clamp(1.5rem,3vw,1.9rem); line-height:1.2; margin:0 0 14px; }
+  #check-in .ci-sub{ font-family:'Fraunces',serif; font-weight:500; letter-spacing:-0.01em; font-size:1.3rem; line-height:1.25; margin:0 0 10px; }
+  #check-in .ci-lead{ font-size:1.02rem; line-height:1.6; color:var(--ci-body); margin:0 0 24px; max-width:52ch; }
+  #check-in .ci-panel p{ color:var(--ci-body); font-size:0.96rem; line-height:1.65; }
+
+  #check-in .ci-qlead{ font-size:0.88rem; color:#6B655A; margin:0 0 10px; display:block; }
+  #check-in .ci-qtext{ font-family:'Fraunces',serif; font-weight:500; font-size:clamp(1.3rem,3vw,1.6rem); line-height:1.3; letter-spacing:-0.01em; display:block; margin:0 0 24px; }
+
+  #check-in fieldset{ border:0; margin:0; padding:0; min-width:0; }
+  #check-in legend{ padding:0; }
+  #check-in .ci-opts{ display:grid; gap:10px; margin:0 0 26px; }
+  #check-in .ci-opt{ position:relative; }
+  #check-in .ci-opt input{ position:absolute; opacity:0; inset:0; width:100%; height:100%; margin:0; cursor:pointer; }
+  #check-in .ci-opt label{
+    display:flex; align-items:center; gap:14px; min-height:56px; padding:12px 18px;
+    border:1px solid var(--line); border-radius:2px; background:#fff; cursor:pointer;
+    font-size:1rem; color:var(--ink); transition:border-color .15s, background .15s;
+  }
+  #check-in .ci-opt label::before{
+    content:""; flex:none; width:20px; height:20px; border-radius:50%;
+    border:1.5px solid var(--muted); background:#fff;
+  }
+  #check-in .ci-opt:hover label{ border-color:var(--teal); }
+  #check-in .ci-opt input:checked + label{ border-color:var(--teal); box-shadow:inset 0 0 0 1px var(--teal); background:var(--ci-tint); }
+  #check-in .ci-opt input:checked + label::before{ border-color:var(--teal); background:var(--teal); box-shadow:inset 0 0 0 4px var(--ci-tint); }
+  #check-in .ci-opt input:focus-visible + label{ outline:3px solid var(--ochre-deep); outline-offset:2px; }
+
+  #check-in .ci-check{ display:flex; gap:12px; align-items:flex-start; margin:18px 0 22px; }
+  #check-in .ci-check input{ width:22px; height:22px; margin:3px 0 0; flex:none; accent-color:var(--teal); }
+  #check-in .ci-check label{ cursor:pointer; color:var(--ci-body); font-size:0.96rem; line-height:1.6; }
+
+  #check-in .ci-actions{ display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+  #check-in .ci-actions .ci-grow{ flex:1; }
+  #check-in .ci-btn{
+    font-family:inherit; font-weight:500; font-size:0.95rem; line-height:1.3;
+    border-radius:2px; padding:14px 26px; min-height:50px;
+    border:1px solid var(--teal); cursor:pointer; text-align:center;
+    display:inline-flex; align-items:center; justify-content:center;
+    transition:background .15s, color .15s, border-color .15s;
+  }
+  #check-in .ci-btn-primary{ background:var(--teal); color:var(--bg); }
+  #check-in .ci-btn-primary:hover:not(:disabled){ background:#163630; border-color:#163630; }
+  #check-in .ci-btn-secondary{ background:transparent; color:var(--teal); }
+  #check-in .ci-btn-secondary:hover{ background:var(--teal); color:var(--bg); }
+  #check-in .ci-btn:disabled{ opacity:.4; cursor:not-allowed; }
+  #check-in .ci-btn:focus-visible,
+  #check-in a:focus-visible,
+  #check-in input:focus-visible{ outline:3px solid var(--ochre-deep); outline-offset:3px; }
+  #check-in [tabindex="-1"]:focus{ outline:none; }
+
+  #check-in .ci-choice{ display:grid; gap:12px; margin:0 0 20px; }
+  #check-in .ci-choice button{
+    width:100%; text-align:left; display:flex; flex-direction:column; align-items:flex-start; gap:3px;
+    background:#fff; color:var(--ink); border:1px solid var(--line); border-radius:2px; padding:18px 22px;
+    font-family:inherit; cursor:pointer; transition:border-color .15s, background .15s;
+  }
+  #check-in .ci-choice button:hover{ border-color:var(--teal); background:var(--ci-tint); }
+  #check-in .ci-choice button:focus-visible{ outline:3px solid var(--ochre-deep); outline-offset:3px; }
+  #check-in .ci-choice b{ font-family:'Fraunces',serif; font-weight:500; font-size:1.2rem; }
+  #check-in .ci-choice span{ font-weight:400; font-size:0.9rem; color:#5E584D; }
+
+  /* Safety message */
+  #check-in .ci-safety{
+    background:var(--ci-alert-bg); border:2px solid var(--ci-alert-line); color:var(--ci-alert-ink);
+    padding:24px 24px; margin:0 0 28px;
+  }
+  #check-in .ci-safety h3{ font-family:'Fraunces',serif; font-weight:500; font-size:1.45rem; margin:0 0 12px; color:var(--ci-alert-ink); }
+  #check-in .ci-safety p{ margin:0 0 14px; line-height:1.65; font-size:0.98rem; }
+  #check-in .ci-safety ul{ list-style:none; padding:0; margin:0 0 16px; }
+  #check-in .ci-safety li{ padding:10px 0; border-top:1px solid rgba(138,59,18,.3); font-weight:500; }
+  #check-in .ci-safety li:first-child{ border-top:0; }
+
+  /* Results */
+  #check-in .ci-result{ margin:0 0 16px; background:#fff; border:1px solid var(--line); padding:24px 26px; }
+  #check-in .ci-head{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:6px; }
+  #check-in .ci-head h4{ font-family:'Fraunces',serif; font-weight:500; font-size:1.3rem; margin:0; }
+  #check-in .ci-score{ font-family:'Fraunces',serif; font-size:2.6rem; line-height:1; font-weight:500; color:var(--teal); }
+  #check-in .ci-score small{ font-size:1.05rem; color:#6B655A; }
+  #check-in .ci-band{ font-weight:600; color:var(--ochre-deep); margin:0; }
+  #check-in .ci-meter{ display:flex; gap:4px; margin:12px 0 16px; }
+  #check-in .ci-meter i{ flex:1; height:6px; background:var(--line); }
+  #check-in .ci-meter i.on{ background:var(--teal); }
+  #check-in .ci-result .ci-text{ color:var(--ci-body); font-size:0.98rem; line-height:1.65; }
+  #check-in .ci-disc{ font-size:0.85rem; color:#6B655A; border-top:1px solid var(--line); padding-top:12px; margin:18px 0 0; line-height:1.55; }
+  #check-in .ci-summary{ background:var(--teal); color:var(--bg); padding:24px 26px; margin:0 0 16px; }
+  #check-in .ci-summary p{ font-family:'Fraunces',serif; font-size:1.2rem; line-height:1.45; color:var(--bg); }
+  #check-in .ci-bridge{ border:1px solid var(--line); background:#fff; padding:24px 26px; margin:0 0 16px; }
+  #check-in .ci-bridge p{ color:var(--ci-body); font-size:0.98rem; line-height:1.65; margin-bottom:18px; }
+
+  @media (max-width:900px){
+    #check-in{ padding:56px 0; }
+    #check-in .ci-grid{ grid-template-columns:1fr; gap:32px; }
+    #check-in .ci-intro h2{ max-width:none; }
+  }
+  @media (max-width:600px){
+    #check-in .ci-box{ padding:24px 18px; }
+    #check-in .ci-result, #check-in .ci-bridge, #check-in .ci-summary, #check-in .ci-safety{ padding:20px 16px; }
+    #check-in .ci-actions .ci-btn{ width:100%; }
+  }
+  @media (prefers-reduced-motion:reduce){
+    #check-in .ci-progress > div{ transition:none; }
+  }
+  @media print{
+    body.ci-printing nav,
+    body.ci-printing header.hero,
+    body.ci-printing section:not(#check-in),
+    body.ci-printing footer,
+    body.ci-printing #check-in .ci-actions,
+    body.ci-printing #check-in .ci-intro-note{ display:none !important; }
+  }
 </style>
 </head>
 <body>
@@ -547,6 +700,7 @@
       <a href="#testimonials">Stories</a>
       <a href="#founder">Founder</a>
       <a href="#the-excitement-cycle">The Book</a>
+      <a href="#check-in">Free check-in</a>
     </div>
     <a href="https://calendly.com/filanioluwaseun45" class="nav-cta" target="_blank" rel="noopener">Book a session</a>
   </div>
@@ -623,6 +777,27 @@
         <span class="fw-tag">Before you commit</span>
         <h3>Screening bundle</h3>
         <p>Attention, burnout, RSD, and decision fatigue screening: clarity before you book a full engagement.</p>
+        <a href="#check-in" class="fw-link">Take the free Mind &amp; Mood check-in</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="check-in">
+  <div class="wrap">
+    <div class="ci-grid">
+      <div class="ci-intro">
+        <span class="ci-eyebrow">Free check-in · Not a diagnosis</span>
+        <h2>Mind &amp; Mood Check-in</h2>
+        <p class="ci-intro-text" id="ciIntro"></p>
+      </div>
+      <div class="ci-box" id="ciBox" tabindex="-1">
+        <div id="ciProgressWrap" hidden>
+          <div class="ci-progress" role="progressbar" aria-label="Check-in progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="ciBar"><div id="ciBarFill"></div></div>
+          <p class="ci-progress-label" id="ciBarLabel"></p>
+        </div>
+        <div id="ciApp" aria-live="polite"></div>
+        <noscript><p>This check-in needs JavaScript. Please turn it on, or <a href="mailto:brainfirstnigeria@gmail.com">email us</a>.</p></noscript>
       </div>
     </div>
   </div>
@@ -791,6 +966,472 @@
   }
 
   loadTestimonials();
+</script>
+
+<script>
+// ---------- Free Mind & Mood check-in (self-contained: nothing here touches the rest of the page) ----------
+(function(){
+/* ============================================================
+   SETTINGS: edit this block before launch.
+   ============================================================ */
+const CONFIG = {
+  // Version A = anxiety + self-esteem only. Version B adds depression.
+  // Set to true ONLY after the safety checklist (Part 4) is fully ticked.
+  depressionEnabled: false,
+
+  // Safety message details. Replace each with a number you have verified by calling.
+  emergencyNumber: "[Insert verified emergency number]",
+  crisisLine:      "[Insert verified crisis or mental health line]",
+  hospitalDetails: "[Insert nearest psychiatric hospital emergency details]",
+  contactDetails:  "brainfirstnigeria@gmail.com",
+
+  // Links for the ADHD bridge buttons.
+  focusScreenerUrl: "https://calendly.com/filanioluwaseun45",   // Focus Fragmentation screener button
+  bookDebriefUrl:   "https://calendly.com/filanioluwaseun45"
+};
+
+/* Result bands. Keep easy to edit. */
+const BANDS = {
+  gad:[
+    {max:4,  label:"Minimal",  text:"Your answers suggest little anxiety over the last 2 weeks. If something still feels off, trust that and talk to someone."},
+    {max:9,  label:"Mild",     text:"You reported some anxiety. This is common, and small daily habits can help: regular sleep, movement, and writing down what is worrying you. If it grows or starts affecting your day, reach out for support."},
+    {max:14, label:"Moderate", text:"Your answers suggest anxiety that is likely affecting your life. This is a good point to speak with a counsellor or doctor. You do not have to wait until it gets worse."},
+    {max:21, label:"Severe",   text:"Your answers suggest a high level of anxiety. Please speak with a qualified professional soon. If you feel unsafe or overwhelmed right now, contact a trusted person or your nearest hospital."}
+  ],
+  phq:[
+    {max:4,  label:"Minimal",           text:"Your answers suggest few symptoms of low mood over the last 2 weeks. If something still feels heavy, it is worth talking to someone anyway."},
+    {max:9,  label:"Mild",              text:"You reported some low-mood symptoms. Many people do at times. Regular sleep, movement, daylight, and talking to someone you trust can help. If this lasts or gets worse, please reach out for support."},
+    {max:14, label:"Moderate",          text:"Your answers suggest symptoms that are likely affecting your life. This is a good time to speak with a counsellor or doctor. You do not have to carry this alone."},
+    {max:19, label:"Moderately severe", text:"Your answers suggest a high level of low-mood symptoms. Please speak with a qualified professional soon. If it feels like too much, tell someone you trust today."},
+    {max:27, label:"Severe",            text:"Your answers suggest a high level of low-mood symptoms. Please speak with a qualified professional soon. If it feels like too much, tell someone you trust today."}
+  ],
+  rse:[
+    {max:14, label:"Lower than typical", text:"Your answers suggest that you are being hard on yourself right now. Feelings about ourselves can change, and they are shaped by experiences, not by who you are. Talking to a counsellor can help. Small steps like noticing what you did well each day can start to shift things."},
+    {max:25, label:"Typical range",      text:"Your answers sit in a typical range. Most people have days when they feel more or less sure of themselves. Look at which statements were hardest for you. That is the place to work on first."},
+    {max:30, label:"Higher than typical",text:"Your answers suggest that you hold a mostly positive view of yourself. Keep protecting that, especially on difficult days."}
+  ]
+};
+
+/* ============================================================
+   QUESTION CONTENT. Wording and scoring as published. Do not reword.
+   ============================================================ */
+const FREQ = ["Not at all","Several days","More than half the days","Nearly every day"];
+const AGREE = ["Strongly agree","Agree","Disagree","Strongly disagree"];
+const DIFFICULTY = ["Not difficult at all","Somewhat difficult","Very difficult","Extremely difficult"];
+const FOLLOWUP = "If you checked any problems, how difficult have these made it for you to do your work, take care of things at home, or get along with other people?";
+
+const SCREENERS = {
+  gad:{
+    key:"gad", name:"Anxiety", max:21, followup:true,
+    introTitle:"Anxiety check",
+    intro:"This short check looks at how anxiety has shown up for you over the last 2 weeks. It takes about 2 minutes. It is not a diagnosis. It helps you see whether what you feel is worth talking about with a professional.",
+    stem:"Over the last 2 weeks, how often have you been bothered by the following problem?",
+    items:[
+      "Feeling nervous, anxious, or on edge",
+      "Not being able to stop or control worrying",
+      "Worrying too much about different things",
+      "Trouble relaxing",
+      "Being so restless that it is hard to sit still",
+      "Becoming easily annoyed or irritable",
+      "Feeling afraid, as if something awful might happen"
+    ],
+    flagAt:10,
+    disclaimer:"This screener does not diagnose anxiety or any other condition. Only a qualified professional can do that."
+  },
+  rse:{
+    key:"rse", name:"Self-esteem", max:30, followup:false,
+    introTitle:"Self-esteem check",
+    intro:"This short check looks at how you feel about yourself in general. It takes about 2 minutes. It is not a diagnosis. There are no right or wrong answers, so answer the way you honestly feel.",
+    stem:"",
+    items:[
+      {t:"On the whole, I am satisfied with myself.", rev:false},
+      {t:"At times, I think I am no good at all.", rev:true},
+      {t:"I feel that I have a number of good qualities.", rev:false},
+      {t:"I am able to do things as well as most other people.", rev:false},
+      {t:"I feel I do not have much to be proud of.", rev:true},
+      {t:"I certainly feel useless at times.", rev:true},
+      {t:"I feel that I am a person of worth, at least on an equal plane with others.", rev:false},
+      {t:"I wish I could have more respect for myself.", rev:true},
+      {t:"All in all, I am inclined to feel that I am a failure.", rev:true},
+      {t:"I take a positive attitude toward myself.", rev:false}
+    ],
+    flagBelow:14,
+    disclaimer:"This screener does not diagnose any condition. It reflects how you felt as you answered."
+  },
+  phq:{
+    key:"phq", name:"Low mood", max:27, followup:true,
+    introTitle:"Low mood check",
+    intro:"This short check looks at how low mood has affected you over the last 2 weeks. It takes about 3 minutes. It is not a diagnosis. Some questions are personal, and you can stop at any time. If you are struggling right now, support is listed on the results page.",
+    stem:"Over the last 2 weeks, how often have you been bothered by the following problem?",
+    items:[
+      "Little interest or pleasure in doing things",
+      "Feeling down, depressed, or hopeless",
+      "Trouble falling or staying asleep, or sleeping too much",
+      "Feeling tired or having little energy",
+      "Poor appetite or overeating",
+      "Feeling bad about yourself, or that you are a failure or have let yourself or your family down",
+      "Trouble concentrating on things, such as reading the newspaper or watching television",
+      "Moving or speaking so slowly that other people could have noticed. Or the opposite: being so fidgety or restless that you have been moving around a lot more than usual",
+      "Thoughts that you would be better off dead, or of hurting yourself in some way"
+    ],
+    flagAt:10,
+    disclaimer:"This screener does not diagnose depression or any other condition. Only a qualified professional can do that."
+  }
+};
+
+const ADHD = {
+  gad:"Restlessness, trouble relaxing, irritability, and constant worry can come from anxiety, from ADHD, or from both. They often occur together and can look alike. If your attention, follow-through, or time management also feel hard, a short ADHD-focused screener may help you see the fuller picture.",
+  phq:"Low energy, trouble concentrating, and feeling like a failure can come from depression, from ADHD, or from both, and the two can look alike. A professional can help sort out which is which.",
+  rse:"Many adults who have struggled with focus, follow-through, or time for years describe a long history of being called lazy or careless. That can wear down how a person sees themselves. If this sounds familiar, an ADHD-focused screener or a short conversation may help.",
+  all:"Anxiety, low mood, and low self-esteem can come with ADHD, or can look like it. If focus, follow-through, time, or feeling overwhelmed are also hard for you, the BrainFirst ADHD screeners may help you see more."
+};
+
+const CONSENT_TEXT = "I understand this is not a diagnosis. My answers are scored on my device. This page does not save them or send them anywhere, and nobody else can see them.";
+
+/* ============================================================
+   APP
+   ============================================================ */
+const box = document.getElementById("ciBox");
+const app = document.getElementById("ciApp");
+const progressWrap = document.getElementById("ciProgressWrap");
+const bar = document.getElementById("ciBar");
+const barFill = document.getElementById("ciBarFill");
+const barLabel = document.getElementById("ciBarLabel");
+if(!box || !app) return;
+
+const dep0 = CONFIG.depressionEnabled;
+const introEl = document.getElementById("ciIntro");
+if(introEl){
+  introEl.textContent = "A free " + (dep0?"5 to 8":"3 to 5") + " minute check-in on " + (dep0?"three things":"two things") +
+    " that often travel together: anxiety, how you feel about yourself" + (dep0?", and low mood":"") +
+    ". It is not a diagnosis. Your answers are private, and you can stop at any time.";
+}
+
+let state;
+let started = false; // the first screen renders silently so the page does not jump on load
+function reset(){
+  state = {mode:null, order:[], answers:{gad:[], rse:[], phq:[]}, follow:{gad:null, phq:null}, steps:[], i:0};
+}
+reset();
+
+const $ = (sel,root)=> (root||document).querySelector(sel);
+function el(html){const t=document.createElement("template");t.innerHTML=html.trim();return t.content.firstElementChild;}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+function linkAttrs(url){return /^https?:/i.test(url)?' target="_blank" rel="noopener"':"";}
+
+function show(node,focusSel){
+  app.replaceChildren(node);
+  if(started){
+    const top = box.getBoundingClientRect().top;
+    if(top < 80 || top > window.innerHeight*0.6) box.scrollIntoView({block:"start"});
+    const f = focusSel ? node.querySelector(focusSel) : node.querySelector(".ci-title,.ci-sub,.ci-qtext,.ci-safety");
+    if(f){f.setAttribute("tabindex","-1");f.focus({preventScroll:true});}
+  }
+  started = true;
+}
+function setProgress(pct,label){
+  progressWrap.hidden=false;
+  const p=Math.round(pct);
+  barFill.style.width=p+"%";
+  bar.setAttribute("aria-valuenow",p);
+  barLabel.textContent=label||"";
+}
+function hideProgress(){progressWrap.hidden=true;}
+
+/* ---------- Scoring ---------- */
+function itemScore(key,idx){
+  const a = state.answers[key][idx];
+  if(a===undefined||a===null) return 0;
+  if(key==="rse"){
+    // a = 0..3 index into AGREE (0 = Strongly agree)
+    return SCREENERS.rse.items[idx].rev ? a : 3 - a;
+  }
+  return a;
+}
+function total(key){
+  return SCREENERS[key].items.reduce((s,_,i)=>s+itemScore(key,i),0);
+}
+function bandFor(key,score){
+  return BANDS[key].find(b=>score<=b.max);
+}
+
+/* ---------- Steps ---------- */
+function buildSteps(){
+  const steps=[];
+  state.order.forEach(key=>{
+    steps.push({type:"intro",key});
+    SCREENERS[key].items.forEach((_,idx)=>steps.push({type:"q",key,idx}));
+    if(SCREENERS[key].followup) steps.push({type:"follow",key});
+  });
+  state.steps=steps;
+}
+function stepActive(s){
+  if(s.type==="follow") return total(s.key)>0; // follow-up only if any problem was checked
+  return true;
+}
+function nextIndex(from){
+  let i=from+1;
+  while(i<state.steps.length && !stepActive(state.steps[i])) i++;
+  return i;
+}
+function prevIndex(from){
+  let i=from-1;
+  while(i>=0 && !stepActive(state.steps[i])) i--;
+  return i;
+}
+function questionCounts(){
+  const active=state.steps.filter(s=>s.type!=="intro" && stepActive(s));
+  const done=state.steps.slice(0,state.i).filter(s=>s.type!=="intro" && stepActive(s)).length;
+  return {done,total:active.length};
+}
+
+/* ---------- Screens ---------- */
+function screenConsent(){
+  hideProgress();
+  const n = el(`
+  <section>
+    <div class="ci-panel">
+      <h3 class="ci-sub">Before you start</h3>
+      <p>We do not ask for your name or contact details. Your answers are scored on your device and are not saved or sent anywhere.</p>
+      <div class="ci-check">
+        <input type="checkbox" id="ciConsent">
+        <label for="ciConsent">${esc(CONSENT_TEXT)}</label>
+      </div>
+      <button type="button" class="ci-btn ci-btn-primary" id="ciGo" disabled>Continue</button>
+    </div>
+  </section>`);
+  const cb=$("#ciConsent",n), go=$("#ciGo",n);
+  cb.addEventListener("change",()=>go.disabled=!cb.checked);
+  go.addEventListener("click",screenChoice);
+  show(n,".ci-sub");
+}
+
+function screenChoice(){
+  hideProgress();
+  const dep=CONFIG.depressionEnabled;
+  const allLabel = dep?"Take all three":"Take both";
+  const allSub = dep?"Anxiety, self-esteem, then low mood. About 5 to 8 minutes.":"Anxiety, then self-esteem. About 3 to 5 minutes.";
+  const n = el(`
+  <section>
+    <h3 class="ci-title">How would you like to do this?</h3>
+    <div class="ci-choice" id="ciMain">
+      <button type="button" id="ciAll"><b>${allLabel}</b><span>${allSub}</span></button>
+      <button type="button" id="ciOne"><b>Pick one</b><span>Choose a single check.</span></button>
+    </div>
+    <div id="ciPicker" class="ci-choice" hidden>
+      <button type="button" data-k="gad"><b>Anxiety</b><span>7 questions, about 2 minutes</span></button>
+      <button type="button" data-k="rse"><b>Self-esteem</b><span>10 statements, about 2 minutes</span></button>
+      ${dep?`<button type="button" data-k="phq"><b>Low mood</b><span>9 questions, about 3 minutes. Some are personal.</span></button>`:""}
+    </div>
+    <div class="ci-actions"><button type="button" class="ci-btn ci-btn-secondary" id="ciBack">Back</button></div>
+  </section>`);
+  $("#ciAll",n).addEventListener("click",()=>startFlow("all", dep?["gad","rse","phq"]:["gad","rse"]));
+  $("#ciOne",n).addEventListener("click",()=>{$("#ciPicker",n).hidden=false;$("#ciMain",n).hidden=true;});
+  n.querySelectorAll("#ciPicker button").forEach(b=>b.addEventListener("click",()=>startFlow("one",[b.dataset.k])));
+  $("#ciBack",n).addEventListener("click",()=>{
+    if(!$("#ciPicker",n).hidden){$("#ciPicker",n).hidden=true;$("#ciMain",n).hidden=false;}
+    else screenConsent();
+  });
+  show(n,".ci-title");
+}
+
+function startFlow(mode,order){
+  reset();
+  state.mode=mode; state.order=order;
+  buildSteps();
+  state.i=0;
+  render();
+}
+
+function render(){
+  if(state.i>=state.steps.length) return screenResults();
+  const s=state.steps[state.i];
+  if(s.type==="intro") return screenIntro(s);
+  if(s.type==="follow") return screenFollow(s);
+  return screenQuestion(s);
+}
+
+function screenIntro(s){
+  const sc=SCREENERS[s.key];
+  const {done,total:tot}=questionCounts();
+  setProgress(tot?done/tot*100:0, tot?`${done} of ${tot} answered`:"");
+  const n=el(`
+  <section>
+    <h3 class="ci-title">${esc(sc.introTitle)}</h3>
+    <p class="ci-lead">${esc(sc.intro)}</p>
+    <div class="ci-actions">
+      <button type="button" class="ci-btn ci-btn-secondary" id="ciBack">Back</button>
+      <button type="button" class="ci-btn ci-btn-primary ci-grow" id="ciNext">Start</button>
+    </div>
+  </section>`);
+  $("#ciNext",n).addEventListener("click",()=>{state.i=nextIndex(state.i);render();});
+  $("#ciBack",n).addEventListener("click",()=>{
+    const p=prevIndex(state.i);
+    if(p<0) screenChoice(); else {state.i=p;render();}
+  });
+  show(n,".ci-title");
+}
+
+function optionsHTML(name,labels,selected){
+  return labels.map((l,i)=>`
+    <div class="ci-opt">
+      <input type="radio" name="${name}" id="${name}-${i}" value="${i}" ${selected===i?"checked":""}>
+      <label for="${name}-${i}">${esc(l)}</label>
+    </div>`).join("");
+}
+
+function screenQuestion(s){
+  const sc=SCREENERS[s.key];
+  const {done,total:tot}=questionCounts();
+  setProgress(done/tot*100,`Question ${done+1} of ${tot}`);
+  const item = s.key==="rse" ? sc.items[s.idx].t : sc.items[s.idx];
+  const labels = s.key==="rse" ? AGREE : FREQ;
+  const sel = state.answers[s.key][s.idx];
+  const lead = sc.stem ? `<span class="ci-qlead">${esc(sc.stem)}</span>` : "";
+  const n=el(`
+  <section>
+    <fieldset>
+      <legend>${lead}<span class="ci-qtext">${esc(item)}</span></legend>
+      <div class="ci-opts">${optionsHTML("ciq",labels,sel)}</div>
+    </fieldset>
+    <div class="ci-actions">
+      <button type="button" class="ci-btn ci-btn-secondary" id="ciBack">Back</button>
+      <button type="button" class="ci-btn ci-btn-primary ci-grow" id="ciNext" ${sel===undefined?"disabled":""}>Next</button>
+    </div>
+  </section>`);
+  const next=$("#ciNext",n);
+  n.querySelectorAll("input[name=ciq]").forEach(r=>r.addEventListener("change",()=>{
+    state.answers[s.key][s.idx]=Number(r.value);
+    next.disabled=false;
+  }));
+  next.addEventListener("click",()=>{state.i=nextIndex(state.i);render();});
+  $("#ciBack",n).addEventListener("click",()=>{state.i=prevIndex(state.i);render();});
+  show(n,".ci-qtext");
+}
+
+function screenFollow(s){
+  const {done,total:tot}=questionCounts();
+  setProgress(done/tot*100,`Question ${done+1} of ${tot}`);
+  const sel=state.follow[s.key];
+  const n=el(`
+  <section>
+    <fieldset>
+      <legend><span class="ci-qtext">${esc(FOLLOWUP)}</span></legend>
+      <div class="ci-opts">${optionsHTML("cif",DIFFICULTY,sel)}</div>
+    </fieldset>
+    <div class="ci-actions">
+      <button type="button" class="ci-btn ci-btn-secondary" id="ciBack">Back</button>
+      <button type="button" class="ci-btn ci-btn-primary ci-grow" id="ciNext" ${sel===null?"disabled":""}>Next</button>
+    </div>
+  </section>`);
+  const next=$("#ciNext",n);
+  n.querySelectorAll("input[name=cif]").forEach(r=>r.addEventListener("change",()=>{state.follow[s.key]=Number(r.value);next.disabled=false;}));
+  next.addEventListener("click",()=>{state.i=nextIndex(state.i);render();});
+  $("#ciBack",n).addEventListener("click",()=>{state.i=prevIndex(state.i);render();});
+  show(n,".ci-qtext");
+}
+
+/* ---------- Results ---------- */
+function safetyHTML(){
+  return `
+  <div class="ci-safety" id="ciSafety" role="region" aria-label="Support message">
+    <h3>Please read this first</h3>
+    <p>You answered that you have had thoughts of being better off dead, or of hurting yourself. Thank you for being honest. These thoughts are a sign of real pain, and you deserve support with them.</p>
+    <p>Please tell someone you trust today, such as a family member, a friend, or a faith leader, and ask them to stay with you. If you think you might act on these thoughts, go to the nearest hospital emergency department or call emergency services now.</p>
+    <ul>
+      <li>${esc(CONFIG.emergencyNumber)}</li>
+      <li>${esc(CONFIG.crisisLine)}</li>
+      <li>${esc(CONFIG.hospitalDetails)}</li>
+    </ul>
+    <p style="margin:0">BrainFirst Nigeria is not an emergency service. You can also contact us at ${esc(CONFIG.contactDetails)}.</p>
+  </div>`;
+}
+
+function meterHTML(key,score){
+  const bands=BANDS[key];
+  const idx=bands.findIndex(b=>score<=b.max);
+  return `<div class="ci-meter" aria-hidden="true">${bands.map((_,i)=>`<i class="${i<=idx?"on":""}"></i>`).join("")}</div>`;
+}
+
+function bridgeHTML(text){
+  return `
+  <div class="ci-bridge">
+    <p>${esc(text)}</p>
+    <div class="ci-actions">
+      <a class="ci-btn ci-btn-primary" href="${esc(CONFIG.focusScreenerUrl)}"${linkAttrs(CONFIG.focusScreenerUrl)}>Try the Focus Fragmentation screener</a>
+      <a class="ci-btn ci-btn-secondary" href="${esc(CONFIG.bookDebriefUrl)}"${linkAttrs(CONFIG.bookDebriefUrl)}>Book a 20-minute debrief with BrainFirst Nigeria</a>
+    </div>
+  </div>`;
+}
+
+function flagged(key,score){
+  const sc=SCREENERS[key];
+  return sc.flagAt!==undefined ? score>=sc.flagAt : score<=sc.flagBelow;
+}
+
+function screenResults(){
+  hideProgress();
+  const scores={};
+  state.order.forEach(k=>scores[k]=total(k));
+  const showSafety = state.order.includes("phq") && state.answers.phq[8]>=1;
+
+  let html="<section>";
+  if(showSafety) html+=safetyHTML();
+  html+=`<h3 class="ci-title" id="ciRh">Your results</h3>`;
+  html+=`<p class="ci-lead">These results describe what you reported. They are not a diagnosis.</p>`;
+
+  state.order.forEach(k=>{
+    const sc=SCREENERS[k], s=scores[k], b=bandFor(k,s);
+    html+=`
+    <div class="ci-result">
+      <div class="ci-head">
+        <h4>${esc(sc.name)}</h4>
+        <div class="ci-score">${s}<small> / ${sc.max}</small></div>
+      </div>
+      <p class="ci-band">${esc(b.label)}</p>
+      ${meterHTML(k,s)}
+      <p class="ci-text">${esc(b.text)}</p>
+      <p class="ci-disc">${esc(sc.disclaimer)}</p>
+    </div>`;
+  });
+
+  if(state.mode==="all"){
+    const names={gad:"anxiety",rse:"self-esteem",phq:"low mood"};
+    const flags=state.order.filter(k=>flagged(k,scores[k]));
+    let line;
+    if(flags.length===0) line="Your answers did not point to strong symptoms in these areas. If something still feels off, trust that, and talk to someone.";
+    else if(flags.length===1) line=`Your answers point to one area worth attention: ${names[flags[0]]}. Read its result above, and consider talking to someone about it.`;
+    else line="Your answers point to more than one area of strain. That is common, and these things often affect each other. It is worth talking it through with a professional so the whole picture can be understood. Nothing here is a diagnosis.";
+    html+=`<div class="ci-summary"><p>${esc(line)}</p></div>`;
+    html+=bridgeHTML(ADHD.all);
+  } else {
+    const k=state.order[0], s=scores[k];
+    const showBridge = k==="gad" || (k==="phq" && s>=5) || (k==="rse" && s<=14);
+    if(showBridge) html+=bridgeHTML(ADHD[k]);
+  }
+
+  html+=`
+    <div class="ci-panel">
+      <h3 class="ci-sub">Next steps</h3>
+      <p>If any result felt true for you, consider sharing it with a counsellor or doctor. Your results are not saved, so you can print this page or take a screenshot if you want to keep them.</p>
+      <div class="ci-actions" style="margin-top:20px">
+        <button type="button" class="ci-btn ci-btn-primary" id="ciPrint">Print or save these results</button>
+        <button type="button" class="ci-btn ci-btn-secondary" id="ciAgain">Start again</button>
+      </div>
+      <p class="ci-disc">${state.mode==="all"?"This check-in does not diagnose any condition. Only a qualified professional can do that.":"This screener does not diagnose any condition. Only a qualified professional can do that."}</p>
+    </div>
+  </section>`;
+
+  const n=el(html);
+  $("#ciPrint",n).addEventListener("click",()=>{document.body.classList.add("ci-printing");window.print();});
+  $("#ciAgain",n).addEventListener("click",()=>{reset();screenConsent();});
+  show(n, showSafety?"#ciSafety":"#ciRh");
+}
+
+window.addEventListener("afterprint",()=>document.body.classList.remove("ci-printing"));
+
+screenConsent();
+})();
 </script>
 
 </body>
