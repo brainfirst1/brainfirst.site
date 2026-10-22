@@ -697,6 +697,9 @@
   .btn-checkin:hover{ background:#163630 !important; }
   .nav-links a.nav-ci{ color:var(--teal); font-weight:600; }
   .nav-links a.nav-ci::before{ content:""; display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--ochre); margin-right:8px; vertical-align:middle; }
+  #ciPaid{ margin-top:56px; background:var(--bg); color:var(--ink); padding:clamp(20px,4vw,44px); scroll-margin-top:90px; }
+  #ciPaid[hidden]{ display:none; }
+  @media print{ #ciPaid{ display:none !important; } }
   .ci-float{
     position:fixed; right:20px; bottom:20px; z-index:40;
     display:inline-flex; align-items:center; gap:10px;
@@ -768,6 +771,104 @@
         <div id="ciApp" aria-live="polite"></div>
         <noscript><p>This check-in needs JavaScript. Please turn it on, or <a href="mailto:brainfirstnigeria@gmail.com">email us</a>.</p></noscript>
       </div>
+    </div>
+    <div id="ciPaid" hidden>
+<!-- ===================== BRAINFIRST BUNDLE OFFER ===================== -->
+<div id="bf-root"><div class="bf-wrap">
+<h2 class="bf-title">The BrainFirst Screening Bundle</h2>
+<p class="bf-lead">Our goal is to help 1,000 people see themselves more clearly. Be one of them.</p>
+<p>The BrainFirst Screening Bundle gives you a clear, private picture of how your mind works, in about 25 minutes:</p>
+<ul class="bf-gets">
+<li><span aria-hidden="true">✅</span><span><strong>Attention and Executive Function Profile.</strong> See where focus, starting, planning, time and follow-through break down, and where you are already strong.</span></li>
+<li><span aria-hidden="true">✅</span><span><strong>Rejection Sensitivity Profile.</strong> Understand why criticism and being left out hurt so much, and what you tend to do next.</span></li>
+<li><span aria-hidden="true">✅</span><span><strong>Your personal report for each.</strong> 2 to 3 pages, written for you by the founder of BrainFirst Nigeria, a licensed therapist.</span></li>
+<li><span aria-hidden="true">✅</span><span><strong>A 20-minute one-on-one debrief</strong> with the founder to turn your results into a plan.</span></li>
+<li><span aria-hidden="true">✅</span><span><strong>A simple 2-week action plan.</strong> Small experiments built around your results.</span></li>
+</ul>
+<div class="bf-bonus"><span aria-hidden="true">🎁</span><span><strong>Free bonus:</strong> a 30-minute one-on-one consultation with the founder of BrainFirst Nigeria, your therapist (worth ₦10,000). Book within 14 days of your debrief.</span></div>
+<p class="bf-price"><span id="bfPrice">₦30,000</span>. <span class="bf-small">Your reports reach you within 48 hours.</span></p>
+<p>You take the two profiles one after the other, with nothing more to pay.</p>
+<p class="bf-small">This is not a diagnosis. It is the clearest first step towards understanding yourself, so you can stop guessing and start doing what works for your brain.</p>
+<div class="bf-actions"><a class="bf-btn" id="bfPay" href="#" target="_blank" rel="noopener">Get the bundle</a></div>
+<p class="bf-small" style="margin-top:.8rem">After payment you are taken straight to your assessment.</p>
+</div></div>
+<style>#bf-root{--ink:#1C1A17;--muted:#6B645A;--card:#FFFDF9;--line:#D8CFBE;--accent:#1F4B43;--accent-d:#173A34;--tint:#E3E9DF;--warn:#8A3B12;--warnbg:#FFEFDD;
+  font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:1rem;line-height:1.6;color:var(--ink);scroll-margin-top:90px}
+#bf-root *,#bf-root *::before,#bf-root *::after{box-sizing:border-box}
+#bf-root .bf-wrap{max-width:700px;margin:0}
+#bf-root h1,#bf-root h2,#bf-root h3,#bf-root h4{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.22;margin:0 0 .55em;color:var(--ink)}
+#bf-root h1{font-size:clamp(1.9rem,5.5vw,2.6rem);letter-spacing:-.01em}
+#bf-root h2{font-size:clamp(1.35rem,4vw,1.7rem)}
+#bf-root h3{font-size:1.2rem;margin-top:1.6em}
+#bf-root h4{font-size:1.02rem;margin:1.1em 0 .3em}
+#bf-root p{margin:0 0 1em}
+#bf-root .bf-lead{font-size:1.1rem;color:var(--muted);max-width:56ch}
+#bf-root .bf-small{font-size:.9rem;color:var(--muted)}
+#bf-root .bf-rows{margin:2rem 0 1.5rem;border-top:1.5px solid var(--ink)}
+#bf-root .bf-row{padding:1.5rem 0;border-bottom:1px solid var(--line)}
+#bf-root .bf-row h2{margin-bottom:.35em}
+#bf-root .bf-row p{max-width:58ch}
+#bf-root .bf-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:.6rem}
+#bf-root .bf-btn{display:inline-block;font:inherit;font-weight:600;font-size:1rem;padding:13px 24px;border-radius:2px;border:1.5px solid var(--accent);background:var(--accent);color:#fff;text-decoration:none;cursor:pointer;min-height:48px;line-height:1.2}
+#bf-root .bf-btn:hover{background:var(--accent-d);border-color:var(--accent-d)}
+#bf-root .bf-btn.alt{background:transparent;color:var(--accent)}
+#bf-root .bf-btn.alt:hover{background:var(--tint)}
+#bf-root .bf-btn[disabled]{opacity:.55;cursor:not-allowed}
+#bf-root .bf-link{font:inherit;background:none;border:none;color:var(--accent);text-decoration:underline;cursor:pointer;padding:8px 2px;min-height:44px}
+#bf-root .bf-card{background:var(--card);border:1px solid var(--line);border-radius:2px;padding:clamp(18px,4vw,32px)}
+#bf-root .bf-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;min-height:44px}
+#bf-root .bf-top .bf-stage{font-size:.92rem;color:var(--muted)}
+#bf-root .bf-bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin-bottom:26px}
+#bf-root .bf-bar i{display:block;height:100%;background:var(--ochre);transition:width .25s ease}
+#bf-root .bf-q{font-size:clamp(1.3rem,4.4vw,1.7rem);margin-bottom:.4em;outline:none}
+#bf-root .bf-hint{color:var(--muted);font-size:.95rem;margin-bottom:1.1rem}
+#bf-root .bf-opts{margin:1.1rem 0 .4rem}
+#bf-root .bf-opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:13px 16px;margin:0 0 10px;background:var(--card);border:1.5px solid var(--line);border-radius:2px;font:inherit;color:var(--ink);cursor:pointer;min-height:52px}
+#bf-root .bf-opt:hover{border-color:var(--accent)}
+#bf-root .bf-opt[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+#bf-root .bf-opt .n{flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid currentColor;display:inline-flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:600}
+#bf-root .bf-opt.dk{border-style:dashed}
+#bf-root .bf-field{display:block;width:100%;font:inherit;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:2px;padding:12px 14px;margin:0 0 14px}
+#bf-root textarea.bf-field{min-height:140px;resize:vertical}
+#bf-root label.bf-lab{display:block;font-weight:600;margin:0 0 6px}
+#bf-root .bf-check{display:flex;gap:12px;align-items:flex-start;margin:0 0 14px;cursor:pointer}
+#bf-root .bf-check input{flex:none;width:22px;height:22px;margin-top:3px;accent-color:var(--accent)}
+#bf-root .bf-consent{background:var(--paper);border-radius:2px;padding:16px 18px;margin:0 0 18px}
+#bf-root .bf-err{color:var(--warn);background:var(--warnbg);border-radius:2px;padding:10px 14px;margin:0 0 14px;font-size:.95rem}
+#bf-root .bf-safety{background:var(--warnbg);border-left:4px solid var(--warn);border-radius:2px;padding:14px 18px;margin:1.6rem 0 0;color:var(--ink)}
+#bf-root .bf-safety p:last-child{margin-bottom:0}
+#bf-root .bf-nav{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:1rem}
+#bf-root :focus-visible{outline:3px solid var(--ochre);outline-offset:2px}
+#bf-root .bf-code{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start}
+#bf-root .bf-code .bf-field{flex:1 1 220px;margin:0;max-width:320px}
+#bf-root .bf-report{margin-top:2rem;padding-top:1rem;border-top:1.5px dashed var(--muted)}
+#bf-root table.bf-t{width:100%;border-collapse:collapse;margin:0 0 1em;font-size:.95rem}
+#bf-root table.bf-t th,#bf-root table.bf-t td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+#bf-root ul{padding-left:1.2em;margin:0 0 1em}
+#bf-root li{margin-bottom:.4em}
+#ciPaid .bf-gets{list-style:none;padding:0;margin:1.1rem 0}
+#ciPaid .bf-gets li{display:flex;gap:12px;align-items:flex-start;margin:0 0 12px}
+#ciPaid .bf-gets li>span:first-child{flex:none}
+#ciPaid .bf-bonus{display:flex;gap:12px;align-items:flex-start;background:var(--tint);padding:14px 18px;margin:0 0 1.2rem;border-radius:2px}
+#ciPaid .bf-price{font-family:'Fraunces',Georgia,serif;font-size:1.5rem;margin:0 0 .6em}
+@media (prefers-reduced-motion:reduce){#bf-root .bf-bar i{transition:none}}
+
+#ciPaid .bf-title{font-size:clamp(1.8rem,3.4vw,2.5rem);margin-bottom:.5em;max-width:18ch}
+@media (max-width:700px){</style>
+<script>
+var BF_SALES = {
+  paymentLink: "https://selar.com/v59g929w52",        // Selar product link
+  price: "₦30,000"
+};
+(function(){
+  var a=document.getElementById('bfPay'), pr=document.getElementById('bfPrice');
+  if(pr) pr.textContent='Just '+BF_SALES.price;
+  if(!a) return;
+  if(BF_SALES.paymentLink){ a.href=BF_SALES.paymentLink; a.textContent='Get the bundle for '+BF_SALES.price; }
+  else { a.removeAttribute('href'); a.textContent='Payment link not set'; a.setAttribute('aria-disabled','true'); a.addEventListener('click',function(e){e.preventDefault();}); }
+})();
+</script>
+<!-- ==================================================================== -->
     </div>
   </div>
 </section>
@@ -1010,9 +1111,10 @@ const CONFIG = {
   depressionEnabled: false,
 
   // Safety message details. Replace each with a number you have verified by calling.
-  emergencyNumber: "[Insert verified emergency number]",
-  crisisLine:      "[Insert verified crisis or mental health line]",
-  hospitalDetails: "[Insert nearest psychiatric hospital emergency details]",
+  // Leave a line empty ("") and it is simply not shown to users. Never leave [Insert ...] text here.
+  emergencyNumber: "",
+  crisisLine:      "",
+  hospitalDetails: "",
   contactDetails:  "brainfirstnigeria@gmail.com",
 
   // Links for the ADHD bridge buttons.
@@ -1362,17 +1464,19 @@ function screenFollow(s){
 }
 
 /* ---------- Results ---------- */
+function safetyListHTML(){
+  const items=[CONFIG.emergencyNumber,CONFIG.crisisLine,CONFIG.hospitalDetails]
+    .map(function(x){return String(x||'').trim();})
+    .filter(function(x){return x && x.charAt(0)!=='[';});
+  return items.length ? '<ul>'+items.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>' : '';
+}
 function safetyHTML(){
   return `
   <div class="ci-safety" id="ciSafety" role="region" aria-label="Support message">
     <h3>Please read this first</h3>
     <p>You answered that you have had thoughts of being better off dead, or of hurting yourself. Thank you for being honest. These thoughts are a sign of real pain, and you deserve support with them.</p>
     <p>Please tell someone you trust today, such as a family member, a friend, or a faith leader, and ask them to stay with you. If you think you might act on these thoughts, go to the nearest hospital emergency department or call emergency services now.</p>
-    <ul>
-      <li>${esc(CONFIG.emergencyNumber)}</li>
-      <li>${esc(CONFIG.crisisLine)}</li>
-      <li>${esc(CONFIG.hospitalDetails)}</li>
-    </ul>
+    ${safetyListHTML()}
     <p style="margin:0">BrainFirst Nigeria is not an emergency service. You can also contact us at ${esc(CONFIG.contactDetails)}.</p>
   </div>`;
 }
@@ -1450,11 +1554,18 @@ function screenResults(){
       </div>
       <p class="ci-disc">${state.mode==="all"?"This check-in does not diagnose any condition. Only a qualified professional can do that.":"This screener does not diagnose any condition. Only a qualified professional can do that."}</p>
     </div>
+    ${showSafety?"":`<div class="ci-bridge" id="ciPaidOffer">
+      <h3 class="ci-sub">Congratulations, you have completed the free check-in</h3>
+      <p>Thank you for using the free screeners. Your results above are your starting point. If you would like the bigger picture, there is a deeper option: the BrainFirst Screening Bundle, with a personal report for each profile and a one-on-one debrief.</p>
+      <div class="ci-actions"><button type="button" class="ci-btn ci-btn-primary" id="ciPaidGo">See what is in the bundle</button></div>
+    </div>`}
   </section>`;
 
   const n=el(html);
   $("#ciPrint",n).addEventListener("click",()=>{document.body.classList.add("ci-printing");window.print();});
   $("#ciAgain",n).addEventListener("click",()=>{reset();screenConsent();});
+  const goPaid=$("#ciPaidGo",n);
+  if(goPaid) goPaid.addEventListener("click",()=>{const p=document.getElementById("ciPaid"); if(!p) return; p.hidden=false; p.scrollIntoView({behavior:"smooth",block:"start"});});
   show(n, showSafety?"#ciSafety":"#ciRh");
 }
 
