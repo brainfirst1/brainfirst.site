@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Your BrainFirst Screening Bundle</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#FBF6ED;--ink:#1C1A17;--ochre:#C98A2C;--teal:#1F4B43;--muted:#6B645A;--line:#D8CFBE;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+  .top{border-bottom:1px solid var(--line);}
+  .top .in{max-width:1180px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:600;display:flex;align-items:center;gap:9px;color:var(--ink);text-decoration:none;}
+  .logo img{width:26px;height:26px;object-fit:contain;}
+  .top a.home{color:var(--muted);font-size:.9rem;text-decoration:none;}
+  main{max-width:1180px;margin:0 auto;padding:48px 28px 80px;}
+  #ciPaid{max-width:720px;}
+  @media (max-width:600px){main{padding:28px 18px 60px;}}
+</style>
+</head>
+<body>
+<header class="top"><div class="in">
+  <a class="logo" href="index.html"><img src="logo-icon.png" alt="">BrainFirst Nigeria</a>
+  <a class="home" href="index.html">Back to the website</a>
+</div></header>
+<main>
+<div id="ciPaid">
+<div id="bf-root"></div>
+<style>#bf-root{--ink:#1C1A17;--muted:#6B645A;--card:#FFFDF9;--line:#D8CFBE;--accent:#1F4B43;--accent-d:#173A34;--tint:#E3E9DF;--warn:#8A3B12;--warnbg:#FFEFDD;
+  font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:1rem;line-height:1.6;color:var(--ink);scroll-margin-top:90px}
+#bf-root *,#bf-root *::before,#bf-root *::after{box-sizing:border-box}
+#bf-root .bf-wrap{max-width:700px;margin:0}
+#bf-root h1,#bf-root h2,#bf-root h3,#bf-root h4{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.22;margin:0 0 .55em;color:var(--ink)}
+#bf-root h1{font-size:clamp(1.9rem,5.5vw,2.6rem);letter-spacing:-.01em}
+#bf-root h2{font-size:clamp(1.35rem,4vw,1.7rem)}
+#bf-root h3{font-size:1.2rem;margin-top:1.6em}
+#bf-root h4{font-size:1.02rem;margin:1.1em 0 .3em}
+#bf-root p{margin:0 0 1em}
+#bf-root .bf-lead{font-size:1.1rem;color:var(--muted);max-width:56ch}
+#bf-root .bf-small{font-size:.9rem;color:var(--muted)}
+#bf-root .bf-rows{margin:2rem 0 1.5rem;border-top:1.5px solid var(--ink)}
+#bf-root .bf-row{padding:1.5rem 0;border-bottom:1px solid var(--line)}
+#bf-root .bf-row h2{margin-bottom:.35em}
+#bf-root .bf-row p{max-width:58ch}
+#bf-root .bf-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:.6rem}
+#bf-root .bf-btn{display:inline-block;font:inherit;font-weight:600;font-size:1rem;padding:13px 24px;border-radius:2px;border:1.5px solid var(--accent);background:var(--accent);color:#fff;text-decoration:none;cursor:pointer;min-height:48px;line-height:1.2}
+#bf-root .bf-btn:hover{background:var(--accent-d);border-color:var(--accent-d)}
+#bf-root .bf-btn.alt{background:transparent;color:var(--accent)}
+#bf-root .bf-btn.alt:hover{background:var(--tint)}
+#bf-root .bf-btn[disabled]{opacity:.55;cursor:not-allowed}
+#bf-root .bf-link{font:inherit;background:none;border:none;color:var(--accent);text-decoration:underline;cursor:pointer;padding:8px 2px;min-height:44px}
+#bf-root .bf-card{background:var(--card);border:1px solid var(--line);border-radius:2px;padding:clamp(18px,4vw,32px)}
+#bf-root .bf-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;min-height:44px}
+#bf-root .bf-top .bf-stage{font-size:.92rem;color:var(--muted)}
+#bf-root .bf-bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin-bottom:26px}
+#bf-root .bf-bar i{display:block;height:100%;background:var(--ochre);transition:width .25s ease}
+#bf-root .bf-q{font-size:clamp(1.3rem,4.4vw,1.7rem);margin-bottom:.4em;outline:none}
+#bf-root .bf-hint{color:var(--muted);font-size:.95rem;margin-bottom:1.1rem}
+#bf-root .bf-opts{margin:1.1rem 0 .4rem}
+#bf-root .bf-opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:13px 16px;margin:0 0 10px;background:var(--card);border:1.5px solid var(--line);border-radius:2px;font:inherit;color:var(--ink);cursor:pointer;min-height:52px}
+#bf-root .bf-opt:hover{border-color:var(--accent)}
+#bf-root .bf-opt[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+#bf-root .bf-opt .n{flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid currentColor;display:inline-flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:600}
+#bf-root .bf-opt.dk{border-style:dashed}
+#bf-root .bf-field{display:block;width:100%;font:inherit;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:2px;padding:12px 14px;margin:0 0 14px}
+#bf-root textarea.bf-field{min-height:140px;resize:vertical}
+#bf-root label.bf-lab{display:block;font-weight:600;margin:0 0 6px}
+#bf-root .bf-check{display:flex;gap:12px;align-items:flex-start;margin:0 0 14px;cursor:pointer}
+#bf-root .bf-check input{flex:none;width:22px;height:22px;margin-top:3px;accent-color:var(--accent)}
+#bf-root .bf-consent{background:var(--paper);border-radius:2px;padding:16px 18px;margin:0 0 18px}
+#bf-root .bf-err{color:var(--warn);background:var(--warnbg);border-radius:2px;padding:10px 14px;margin:0 0 14px;font-size:.95rem}
+#bf-root .bf-safety{background:var(--warnbg);border-left:4px solid var(--warn);border-radius:2px;padding:14px 18px;margin:1.6rem 0 0;color:var(--ink)}
+#bf-root .bf-safety p:last-child{margin-bottom:0}
+#bf-root .bf-nav{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:1rem}
+#bf-root :focus-visible{outline:3px solid var(--ochre);outline-offset:2px}
+#bf-root .bf-code{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start}
+#bf-root .bf-code .bf-field{flex:1 1 220px;margin:0;max-width:320px}
+#bf-root .bf-report{margin-top:2rem;padding-top:1rem;border-top:1.5px dashed var(--muted)}
+#bf-root table.bf-t{width:100%;border-collapse:collapse;margin:0 0 1em;font-size:.95rem}
+#bf-root table.bf-t th,#bf-root table.bf-t td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+#bf-root ul{padding-left:1.2em;margin:0 0 1em}
+#bf-root li{margin-bottom:.4em}
+#ciPaid .bf-gets{list-style:none;padding:0;margin:1.1rem 0}
+#ciPaid .bf-gets li{display:flex;gap:12px;align-items:flex-start;margin:0 0 12px}
+#ciPaid .bf-gets li>span:first-child{flex:none}
+#ciPaid .bf-bonus{display:flex;gap:12px;align-items:flex-start;background:var(--tint);padding:14px 18px;margin:0 0 1.2rem;border-radius:2px}
+#ciPaid .bf-price{font-family:'Fraunces',Georgia,serif;font-size:1.5rem;margin:0 0 .6em}
+@media (prefers-reduced-motion:reduce){#bf-root .bf-bar i{transition:none}}
+
+#ciPaid .bf-title{font-size:clamp(1.8rem,3.4vw,2.5rem);margin-bottom:.5em;max-width:18ch}
+@media (max-width:700px){</style>
+<script>
+/* ---------------------------------------------------------------
+   SETTINGS: this is the only block you need to edit.
+---------------------------------------------------------------- */
+var BF_CONFIG = {
+  contactEmail: "brainfirstnigeria@gmail.com",     // shown in the consent text (deletion requests)
+  bookingLink: "https://calendly.com/filanioluwaseun45",                        // link to book the 20-minute debrief
+  afterDebrief: "",                       // optional sentence: what you offer after the debrief
+  emergencyContacts: "",                  // verified contacts from Part 4 of your free screeners document
+  submitEndpoint: "",                     // PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE (from deploying google-sheet-receiver.gs)
+  requirePayment: false,                  // false because this page is only reached after payment on Selar
+  autoStart: true,                       // opens straight into the assessment
+  previewKey: ""                          // optional: open the page with ?preview=KEY to see the scored report on screen
+};
+
+(function () {
+'use strict';
+var C = BF_CONFIG;
+var root = document.getElementById('bf-root');
+if (!root) return;
+
+/* ---------- small helpers ---------- */
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function lc(s){return String(s||'').toLowerCase();}
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1);}
+function clone(o){return JSON.parse(JSON.stringify(o));}
+var params = new URLSearchParams(window.location.search);
+var PREVIEW = !!(C.previewKey && params.get('preview') === C.previewKey);
+
+var SCALE = [[0,'Never'],[1,'Sometimes'],[2,'Often'],[3,'Very often']];
+var Q_YEARS = ['Less than a year','1 to 3 years','3 to 10 years','For as long as I remember'];
+var Q_IMPACT = ['Not at all','A little','Quite a lot','Severely'];
+var Q_ASSESSED = ['No','Yes, and diagnosed','Yes, and not diagnosed','I am not sure'];
+
+var CONSENT = 'This profile is a self-reflection tool built by BrainFirst Nigeria. It is not a diagnosis. Your answers are used to prepare your personal report and for your debrief with BrainFirst. We keep them private, collect only what we need, store them securely, and share them with no one without your permission. You can stop at any time, and you can ask us to delete your answers by contacting [email].';
+var RESEARCH = 'Optional: I agree that my answers, with my name and contact details removed, may be used in BrainFirst\'s research on ADHD in Nigeria. Saying no will not change my report.';
+var SAFETY = 'If you feel overwhelmed, hopeless, or unsafe, please tell someone you trust today and go to the nearest hospital emergency department. BrainFirst Nigeria is not an emergency service.';
+var DISCLAIMER = 'This profile is a self-reflection tool built by BrainFirst Nigeria. It is not a diagnosis and not a validated clinical test.';
+var DISTRESS = /(suicid|kill myself|end my life|ending my life|want to die|wanna die|better off dead|self[- ]?harm|hurt myself|harm myself|disappear|no reason to live|hopeless)/i;
+
+/* ---------- assessment content ---------- */
+var AEFP = {
+  id:'aefp', title:'Attention and Executive Function Profile', minutes:'12 to 15 minutes',
+  blurb:'Shows how focus, starting tasks, planning, time, memory, emotions and follow-through play out in your daily life, where you struggle most, where you are strong, and what to try first.',
+  stages:{A:'About you',B:'Statements',C:'Childhood and context'},
+  areas:[
+    {name:'Focus and staying on track', means:'Your attention drifts or gets pulled away by phones and distractions, and it is hard to hold on to tasks that do not excite you.', exps:['Put your phone in another room for one 25-minute work block a day.','Keep a "parking lot" note: write stray thoughts there and return to the task.']},
+    {name:'Starting tasks', means:'You know what to do but cannot begin, so important things wait until the last minute.', exps:['Use the 5-minute start rule: promise yourself only five minutes, then decide whether to stop.','Write down the very first physical action, such as "open the file" or "write the first line."']},
+    {name:'Planning and organising', means:'Goals stay big and unclear, and papers, files, and spaces are hard to keep in order.', exps:['Before any task, write three steps on paper.','Choose one home for important papers and files, and put them there at once.']},
+    {name:'Time awareness', means:'Tasks take longer than you expect, and time slips by without you noticing.', exps:['For five tasks, write your guess, time the real task, and compare. Then add half again to your next guess.','Set an alarm to leave 15 minutes earlier than you think you need to.']},
+    {name:'Remembering', means:'Instructions, plans, and small duties slip away, and interruptions break the thread.', exps:['Put every task and promise in one place, such as a phone note, and nowhere else.','Before you stop or get interrupted, write one line: "I was doing... next step is..."']},
+    {name:'Emotions and impulses', means:'Feelings and reactions come fast and strong, and it takes time to settle.', exps:['Use a 24-hour wait before any non-essential purchase.','Take a 10-second pause and name the feeling before you answer anything heated.']},
+    {name:'Switching and finishing', means:'You start many projects and finish few, and changes of plan or activity feel hard.', exps:['Pick one unfinished project and write what "done" looks like. Finish it before starting anything new.','Before switching tasks, write one line on where you stopped and what comes next.']}
+  ],
+  statements:[
+    'My mind wanders in meetings, lectures, or services, even when the topic matters to me.',
+    'I start reading or watching something and realise I took in very little.',
+    'My phone, WhatsApp, or social media pulls me away from what I am doing before I notice.',
+    'I can focus for hours on something that excites me, but struggle badly with tasks that do not.',
+    'I put off important tasks until the last minute.',
+    'I know exactly what I need to do, but I cannot make myself begin.',
+    'I feel stuck at the start of big tasks, unsure where to begin.',
+    'I only really get going when a deadline is very close or panic sets in.',
+    'My plans fall apart because I have not thought through the steps.',
+    'My desk, room, bag, or phone is disorganised in ways that slow me down.',
+    'I find it hard to break a big goal into smaller steps.',
+    'I lose track of papers, receipts, files, or messages I need.',
+    'I underestimate how long things will take.',
+    'I arrive late or rush at the last minute, even when I meant to be early.',
+    'I lose track of time on one task and miss other things I had to do.',
+    'I find it hard to tell how much of my day or week is left.',
+    'I forget what I was about to do, or why I walked into a room.',
+    'I forget instructions soon after hearing them.',
+    'I forget to pay bills, renew data, or reply to messages unless I set reminders.',
+    'After an interruption, I lose my place in a task and struggle to get back to it.',
+    'I speak or act quickly and regret it afterwards.',
+    'Small frustrations make me upset or irritable very fast.',
+    'I spend money on impulse and regret it later.',
+    'It takes me a long time to calm down after something upsets me.',
+    'I start many projects and leave several unfinished.',
+    'I find it hard to stop one activity and move on to the next.',
+    'When my plans change, I feel thrown off for a long time.',
+    'I lose interest in tasks once the excitement fades.'
+  ],
+  A:[
+    {t:'choice',id:'A1',q:'What is your age range?',o:['18 to 24','25 to 34','35 to 44','45 to 54','55 or older']},
+    {t:'choice',id:'A2',q:'What best describes your main activity right now?',o:['Employed','Business owner or founder','Student','Between jobs','Caring for family','Other']},
+    {t:'multi',id:'A3',q:'Where do these difficulties affect you most?',hint:'Choose up to three.',max:3,o:['Work or business','Studies','Home and chores','Relationships','Money','Health and routines','Time and punctuality']},
+    {t:'choice',id:'A4',q:'How long have you noticed these patterns?',o:Q_YEARS},
+    {t:'choice',id:'A5',q:'How much do they get in the way of daily life?',o:Q_IMPACT},
+    {t:'choice',id:'A6',q:'Have you ever been assessed for ADHD?',o:Q_ASSESSED},
+    {t:'text',id:'A7',q:'Are you currently getting any treatment or support for attention, mood, or anxiety?',optional:true},
+    {t:'choice',id:'A8',q:'On most nights, how many hours do you sleep?',o:['Under 5','5 to 6','7 to 8','Over 8'],optional:true},
+    {t:'text',id:'A9',q:'What have you tried that has helped, even a little?'},
+    {t:'text',id:'A10',q:'If one thing changed in the next three months, what would you want it to be?'}
+  ],
+  C:[
+    {t:'scale',id:'C1',q:'Before about age 12, I had trouble paying attention in class or finishing homework.',dk:true},
+    {t:'scale',id:'C2',q:'As a child, I was described as dreamy, forgetful, restless, or "not living up to my potential."',dk:true},
+    {t:'scale',id:'C3',q:'Teachers or my report cards mentioned focus, carelessness, or disorganisation.',dk:true},
+    {t:'choice',id:'C4',q:'These patterns show up in more than one area of my life, such as home, work or school, and with friends.',o:['No, only in one area','Yes, in two areas','Yes, in most areas']},
+    {t:'choice',id:'C5',q:'In the last 6 months, I have had a lot of stress, poor sleep, low mood, or anxiety.',o:['No','Some','Yes, quite a lot']}
+  ]
+};
+
+var RSD = {
+  id:'rsd', title:'Rejection Sensitivity Profile', minutes:'about 10 minutes',
+  blurb:'Shows how rejection, criticism, and feeling left out land for you, what you tend to do next, and what to try first. It looks at rejection sensitivity patterns, sometimes called RSD.',
+  stages:{A:'About you',B:'Statements',C:'A recent painful moment'},
+  areas:[
+    {name:'Criticism and feedback', means:'Even gentle feedback can feel like a verdict on you as a person, and it stays on your mind.', exps:['Ask one question before reacting, such as "What would make this better?"','Write the feedback down and reread it the next day, separating what was said from what you felt.']},
+    {name:'Reading signals', means:'You scan messages and faces for signs of disapproval, and quick replies or silence feel like rejection.', exps:['When you notice a worry, write it down along with two other possible explanations.','Wait two hours before sending a follow-up message to check on someone.']},
+    {name:'Intensity and the body', means:'The pain arrives fast and physically, and takes a long time to settle.', exps:['Breathe out slowly, longer than you breathe in, for one minute.','Rate the pain from 0 to 10 now and again after 20 minutes, to see that it rises and passes.']},
+    {name:'Pulling back and holding back', means:'You withdraw, lash out, or avoid trying new things to protect yourself.', exps:['Write your reply but wait an hour before sending it.','Pick one safe person to tell what happened, instead of keeping it to yourself.']},
+    {name:'Closeness and relationships', means:'You over-please, seek reassurance, or pull away first, which makes real closeness harder.', exps:['Say one small honest "no" or opinion each week.','Ask directly for what you need, instead of testing whether someone cares.']},
+    {name:'How I see myself afterwards', means:'After a hurt, harsh self-talk and shame take over, and praise is hard to believe.', exps:['Next to each harsh thought, write one fact that does not fit it.','Keep a note on your phone of praise and wins, and read it after a hard day.']}
+  ],
+  statements:[
+    'A small piece of criticism can ruin my whole day.',
+    'When I get feedback at work or school, I hear "you are not good enough," even when it was said kindly.',
+    'I replay what someone said to me for hours or days afterwards.',
+    'I get defensive or shut down quickly when someone corrects me.',
+    'If someone replies late or briefly, I worry that I upset them.',
+    'I look for signs in people\'s tone, face, or messages that they are annoyed with me.',
+    'I expect people to lose interest in me once they know me properly.',
+    'When I am left out of a group chat, event, or plan, it hurts more than I think it should.',
+    'When I feel rejected, the pain feels sudden and overwhelming.',
+    'I feel it in my body, such as a tight chest, a sinking stomach, or heat in my face.',
+    'My feelings after rejection are stronger than other people\'s seem to be.',
+    'It takes me a long time to settle after I have been hurt or embarrassed.',
+    'After I feel rejected, I withdraw or go quiet.',
+    'When I feel rejected, I lash out or say hurtful things, and I regret it afterwards.',
+    'I avoid applying, speaking up, or trying new things because I fear being judged.',
+    'I try very hard to please people so that they do not reject me.',
+    'I find it hard to say no or share my real opinion for fear of upsetting someone.',
+    'I need a lot of reassurance that people still care about me.',
+    'I pull away from, or end, relationships first so that I will not be the one who gets hurt.',
+    'I argue or criticise first, to get ahead of being criticised myself.',
+    'After being rejected, I feel like a failure or not good enough.',
+    'I feel ashamed for days after a small mistake in front of other people.',
+    'After a setback, I tell myself harsh things such as "I always mess up."',
+    'I find it hard to believe praise or reassurance from others.'
+  ],
+  styles:[
+    {key:'pull',label:'pull away',ger:'pulling away',items:[13,15,19],looks:'Going quiet, avoiding, or leaving first.',tip:'Instead of disappearing, send a short message such as "I need a little time. I will reply tomorrow."'},
+    {key:'push',label:'push back',ger:'pushing back',items:[4,14,20],looks:'Getting defensive, lashing out, or criticising first.',tip:'Pause for ten seconds and say, "Can I come back to this?" Come back within a day.'},
+    {key:'please',label:'please and appease',ger:'pleasing and appeasing',items:[16,17,18],looks:'Over-pleasing, not saying no, or needing reassurance.',tip:'Practise one small boundary each week. Notice how often fear, not preference, is driving your yes.'}
+  ],
+  A:[
+    {t:'choice',id:'A1',q:'How long have you noticed that rejection or criticism hurts this much?',o:Q_YEARS},
+    {t:'multi',id:'A2',q:'Where does it hit hardest?',hint:'Choose up to three.',max:3,o:['Work or business','Studies','Family','Romantic relationship','Friendships','Social media or WhatsApp','Church or community']},
+    {t:'choice',id:'A3',q:'How much does it get in the way of daily life?',o:Q_IMPACT},
+    {t:'choice',id:'A4',q:'Have you ever been assessed for ADHD?',o:Q_ASSESSED},
+    {t:'text',id:'A5',q:'Are you currently getting any treatment or support for mood, anxiety, or attention?',optional:true}
+  ],
+  C:[
+    {t:'text',id:'C1',q:'Think of the last time you felt rejected, criticised, or left out. What happened?',skip:true},
+    {t:'text',id:'C2',q:'What did you notice in your body?',skip:true},
+    {t:'text',id:'C3',q:'What did you do in the first hour afterwards?',skip:true},
+    {t:'text',id:'C4',q:'What did you tell yourself about it?',skip:true},
+    {t:'choice',id:'C5',q:'How long did it take before you felt okay again?',o:['Minutes','A few hours','About a day','Several days','Longer than a week'],skip:true}
+  ]
+};
+var PROD = {aefp:AEFP, rsd:RSD};
+
+/* ---------- scoring and report: Attention and Executive Function ---------- */
+var AEFP_NOTES = {
+  1:'Your answers show patterns that are commonly seen in ADHD, and they appear long-standing and wide-ranging. That is a good reason to consider a proper assessment with a psychiatrist. This profile is not a diagnosis.',
+  2:'Your answers show real difficulties, but they do not clearly point to one cause. Stress, sleep, mood, anxiety, and other things can produce similar patterns. A conversation with a professional can help sort this out.',
+  3:'Your answers do not show strong patterns right now. If something still feels hard, trust that and talk to someone.'
+};
+var AEFP_C5 = 'You also reported a lot of stress, poor sleep, low mood, or anxiety. These can cause the same kinds of difficulty, so they should be looked at as well.';
+
+function computeAEFP(a){
+  var order=[1,2,3,0,4,5,6], i, k;
+  var areas=AEFP.areas.map(function(ar,idx){
+    var sc=0,t=0;
+    for(k=1;k<=4;k++){var v=a['s'+(idx*4+k)]; sc+=v; if(v===3)t++;}
+    return {i:idx,name:ar.name,score:sc,threes:t,band:sc<=3?'Rarely a challenge':(sc<=7?'Sometimes a challenge':'Often a challenge')};
+  });
+  var total=0; areas.forEach(function(x){total+=x.score;});
+  var top=areas.slice().sort(function(x,y){return (y.score-x.score)||(y.threes-x.threes)||(order.indexOf(x.i)-order.indexOf(y.i));}).slice(0,2);
+  var often=areas.filter(function(x){return x.band==='Often a challenge';}).length;
+  var cs=0,cn=0; ['C1','C2','C3'].forEach(function(id){var v=a[id]; if(typeof v==='number'){cs+=v;cn++;}});
+  var a5=lc(a.A5), hi=(a5==='quite a lot'||a5==='severely'), lo=(a5==='not at all'||a5==='a little');
+  var wide=(a.C4==='Yes, in two areas'||a.C4==='Yes, in most areas');
+  var note, gap=false;
+  if(often>=4 && cs>=4 && wide && hi) note=1;
+  else if(often===2||often===3||hi) note=2;
+  else if(often<2 && lo) note=3;
+  else {note=2; gap=true;}
+  var strengths=[], phrases=[];
+  areas.forEach(function(x){ if(x.score<=3){strengths.push(x.name+' is a relative strength for you.'); phrases.push(lc(x.name));}});
+  if(a.s4>=2){strengths.push('You can focus deeply on things that excite you.'); phrases.push('deep focus on things that excite you');}
+  if(a.s8>=2){strengths.push('You can deliver under pressure. This is useful, but it can be costly, and the experiments below can help.'); phrases.push('delivering under pressure');}
+  return {areas:areas,total:total,top:top,often:often,child:cs,childAnswered:cn,note:note,noteGap:gap,c5:a.C5==='Yes, in quite a lot'||a.C5==='Yes, quite a lot',strengths:strengths,phrases:phrases};
+}
+
+function sec(h,o){o=o||{};o.h=h;return o;}
+function reportAEFP(r,a){
+  var t1=r.top[0], t2=r.top[1];
+  var head='Your biggest challenges are '+lc(t1.name)+' and '+lc(t2.name)+'.';
+  if(r.phrases.length) head+=' Your strengths include '+r.phrases.slice(0,2).join(' and ')+'.';
+  var e1=AEFP.areas[t1.i], e2=AEFP.areas[t2.i];
+  var S=[];
+  S.push(sec('Your headline',{p:[head]}));
+  S.push(sec('Your profile',{table:{head:['Area','Score (0 to 12)','Band'],rows:r.areas.map(function(x){return [x.name,String(x.score),x.band];})}}));
+  if(r.strengths.length) S.push(sec('Strengths to protect',{ul:r.strengths}));
+  S.push(sec('Your two priorities',{sub:[
+    {h:t1.name,p:[e1.means],ul:e1.exps},
+    {h:t2.name,p:[e2.means],ul:e2.exps}
+  ]}));
+  var np=[AEFP_NOTES[r.note]]; if(r.c5) np.push(AEFP_C5);
+  S.push(sec('The ADHD pattern note',{p:np}));
+  S.push(sec('Your two-week plan',{p:['Each evening, write one line about what worked.'],ul:[
+    'Week 1, '+t1.name+': (1) '+e1.exps[0]+' (2) '+e1.exps[1],
+    'Week 2, keep week 1 and add '+t2.name+': (1) '+e2.exps[0]+' (2) '+e2.exps[1]
+  ]}));
+  S.push(sec('When to see a professional',{p:['If you have a lot of stress, low mood, anxiety, or poor sleep, or if your difficulties are costing you a lot, a psychiatrist or doctor can assess you.',SAFETY]}));
+  S.push(nextStep());
+  S.push(sec('About this profile',{p:[DISCLAIMER]}));
+  return {title:AEFP.title,sections:S};
+}
+function nextStep(){
+  var p=['Your next step is a one-on-one session with the founder of BrainFirst Nigeria.'];
+  if(C.afterDebrief) p.push(C.afterDebrief);
+  var s=sec('Next step',{p:p});
+  if(C.bookingLink) s.link={label:'Book your one-on-one session',url:C.bookingLink};
+  return s;
+}
+function aefpSummary(r){
+  return {total:r.total,topTwo:r.top.map(function(x){return x.name;}),noteLabel:'Note '+r.note+(r.noteGap?' (default, rules did not match)':''),
+    areaLine:r.areas.map(function(x){return x.name+' '+x.score+' ('+x.band+')';}).join('; '),
+    extra:'Often-band areas: '+r.often+'; childhood score: '+r.child+' (answered '+r.childAnswered+' of 3)'+(r.c5?'; C5 line added':'')};
+}
+
+/* ---------- scoring and report: Rejection Sensitivity ---------- */
+var RSD_NOTES = {
+  Low:'Your answers do not show strong rejection sensitivity right now. Being hurt by rejection is human. If something still feels heavy, trust that and talk to someone.',
+  Moderate:'Rejection and criticism hurt you more than you would like at times. That is common, and there is a lot you can do about it.',
+  High:'Your answers show a strong pattern of pain after rejection or criticism. Many people with ADHD describe this, but it also appears with anxiety, low self-esteem, painful past experiences, and low mood. It is worth talking through, and an assessment can help sort out the causes.'
+};
+
+function computeRSD(a){
+  var order=[2,0,1,5,3,4];
+  var areas=RSD.areas.map(function(ar,idx){
+    var sc=0,t=0,k;
+    for(k=1;k<=4;k++){var v=a['s'+(idx*4+k)]; sc+=v; if(v===3)t++;}
+    return {i:idx,name:ar.name,score:sc,threes:t,band:sc<=3?'Rarely a sore point':(sc<=7?'Sometimes a sore point':'Often a sore point')};
+  });
+  var total=0; areas.forEach(function(x){total+=x.score;});
+  var band=total<=17?'Low':(total<=35?'Moderate':(total<=53?'High':'Very high'));
+  var top=areas.slice().sort(function(x,y){return (y.score-x.score)||(y.threes-x.threes)||(order.indexOf(x.i)-order.indexOf(y.i));}).slice(0,2);
+  var styles=RSD.styles.map(function(s){var sum=0; s.items.forEach(function(n){sum+=a['s'+n];}); return {s:s,sum:sum};});
+  var ranked=styles.slice().sort(function(x,y){return y.sum-x.sum;});
+  var style;
+  if(ranked.every(function(x){return x.sum<=3;})) style={kind:'none',label:'no strong reaction style',list:[]};
+  else if(ranked[0].sum-ranked[1].sum<=1) style={kind:'mix',label:'a mix of '+ranked[0].s.ger+' and '+ranked[1].s.ger,list:[ranked[0].s,ranked[1].s]};
+  else style={kind:'one',label:ranked[0].s.label,list:[ranked[0].s]};
+  var hiBand=(band==='High'||band==='Very high');
+  var lines=[];
+  if(hiBand && (a.A4==='No'||a.A4==='I am not sure')) lines.push('You may find it useful to take an ADHD self-assessment, such as BrainFirst\'s Attention and Executive Function Profile.');
+  if(hiBand) lines.push('BrainFirst\'s free anxiety and self-esteem check-ins can show whether those are part of the picture.');
+  if(a.A3==='Severely'||a.C5==='Longer than a week') lines.push('The pain you describe has lasted a long time and is getting in the way of your life. Please consider speaking with a doctor or psychiatrist soon.');
+  return {areas:areas,total:total,band:band,top:top,styles:styles,style:style,note:hiBand?RSD_NOTES.High:RSD_NOTES[band],lines:lines};
+}
+function reportRSD(r,a){
+  var t1=r.top[0], t2=r.top[1], e1=RSD.areas[t1.i], e2=RSD.areas[t2.i], S=[];
+  var head='Rejection and criticism hurt most for you in '+lc(t1.name)+' and '+lc(t2.name)+'. ';
+  head+= r.style.kind==='none' ? 'You do not show one strong reaction style.' : 'Your main reaction style is '+r.style.label+'.';
+  S.push(sec('Clarity: your headline',{p:[head]}));
+  var prow=r.areas.map(function(x){return [x.name,String(x.score),x.band];});
+  prow.push(['Overall pattern',String(r.total)+' of 72',r.band]);
+  S.push(sec('Clarity: your profile',{table:{head:['Area','Score (0 to 12)','Band'],rows:prow},p:[r.note]}));
+  var learn=['Some people feel rejection very sharply. Many in the ADHD community call this RSD, short for rejection sensitive dysphoria, a term for very intense pain after real or imagined rejection or criticism. It is not an official diagnosis. It is a pattern, not a flaw.'];
+  if(r.style.kind==='none') learn.push('Your answers do not show one strong reaction style.');
+  else learn.push('Your main reaction style is '+r.style.label+'. In practice this looks like: '+r.style.list.map(function(s){return lc(s.looks).replace(/\.$/,'');}).join('; and ')+'.');
+  var quote=(a.C1&&a.C1.trim())?a.C1.trim():((a.C3&&a.C3.trim())?a.C3.trim():'');
+  if(quote) learn.push('You wrote: "'+quote+'"');
+  S.push(sec('Learn: what is happening',{p:learn}));
+  var tools=[{h:t1.name,ul:e1.exps},{h:t2.name,ul:e2.exps}];
+  if(r.style.kind!=='none') r.style.list.forEach(function(s){tools.push({h:'Your reaction style: '+s.label,p:[s.tip]});});
+  S.push(sec('Equip: your tools',{sub:tools}));
+  var aff=['Feeling things strongly can also mean you notice other people\'s feelings, care about doing well, and take relationships seriously. Those are real strengths when the pain does not run the show.'];
+  r.areas.forEach(function(x){ if(x.score<=3) aff.push(x.name+' is rarely a sore point for you.');});
+  S.push(sec('Affirm: what is true about you',{p:aff}));
+  var wk1='Week 1: (1) '+e1.exps[0]+' (2) '+e1.exps[1]; if(r.style.kind!=='none') wk1+=' Style tip: '+r.style.list.map(function(s){return s.tip;}).join(' ');
+  S.push(sec('Rise: your two-week plan',{p:['Each evening, write one line about what worked.'],ul:[wk1,'Week 2: keep week 1 and add '+t2.name+': (1) '+e2.exps[0]+' (2) '+e2.exps[1]]}));
+  S.push(sec('When to get more help',{p:r.lines.concat([SAFETY])}));
+  S.push(nextStep());
+  S.push(sec('About this profile',{p:[DISCLAIMER]}));
+  return {title:RSD.title,sections:S};
+}
+function rsdSummary(r){
+  return {total:r.total,topTwo:r.top.map(function(x){return x.name;}),noteLabel:'Overall: '+r.band,
+    areaLine:r.areas.map(function(x){return x.name+' '+x.score+' ('+x.band+')';}).join('; '),
+    extra:'Reaction style: '+r.style.label+' (pull away '+r.styles[0].sum+', push back '+r.styles[1].sum+', please and appease '+r.styles[2].sum+'); extra lines: '+r.lines.length};
+}
+
+/* ---------- report renderers ---------- */
+function repHTML(rep){
+  var h='<h2>'+esc(rep.title)+'</h2>';
+  rep.sections.forEach(function(s){
+    h+='<h3>'+esc(s.h)+'</h3>';
+    (s.p||[]).forEach(function(p){h+='<p>'+esc(p)+'</p>';});
+    if(s.table){h+='<table class="bf-t"><thead><tr>'+s.table.head.map(function(x){return '<th>'+esc(x)+'</th>';}).join('')+'</tr></thead><tbody>'+s.table.rows.map(function(r){return '<tr>'+r.map(function(c){return '<td>'+esc(c)+'</td>';}).join('')+'</tr>';}).join('')+'</tbody></table>';}
+    if(s.ul) h+='<ul>'+s.ul.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>';
+    (s.sub||[]).forEach(function(b){h+='<h4>'+esc(b.h)+'</h4>'; (b.p||[]).forEach(function(p){h+='<p>'+esc(p)+'</p>';}); if(b.ul) h+='<ul>'+b.ul.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>';});
+    if(s.link) h+='<p><a class="bf-btn" href="'+esc(s.link.url)+'" target="_blank" rel="noopener">'+esc(s.link.label)+'</a></p>';
+  });
+  return h;
+}
+function repText(rep){
+  var t=rep.title.toUpperCase()+'\n';
+  rep.sections.forEach(function(s){
+    t+='\n'+s.h.toUpperCase()+'\n';
+    (s.p||[]).forEach(function(p){t+=p+'\n';});
+    if(s.table){t+=s.table.head.join(' | ')+'\n'; s.table.rows.forEach(function(r){t+=r.join(' | ')+'\n';});}
+    if(s.ul) s.ul.forEach(function(x){t+='- '+x+'\n';});
+    (s.sub||[]).forEach(function(b){t+='\n'+b.h+'\n'; (b.p||[]).forEach(function(p){t+=p+'\n';}); if(b.ul) b.ul.forEach(function(x){t+='- '+x+'\n';});});
+    if(s.link) t+=s.link.label+': '+s.link.url+'\n';
+  });
+  return t;
+}
+
+/* ---------- flow ---------- */
+var S = {view:'landing',steps:[],i:0,queue:[],ans:{aefp:{},rsd:{}},contact:{name:'',email:''},consent:{agree:false,research:false},err:'',results:{},sendState:'',local:false,codeErr:'',first:true};
+
+function buildSteps(pid,first){
+  var P=PROD[pid], s=[];
+  if(first){s.push({t:'consent',pid:pid});s.push({t:'contact',pid:pid});}
+  else s.push({t:'intro',pid:pid,key:'next',noBack:true});
+  s.push({t:'intro',pid:pid,key:'A'});
+  P.A.forEach(function(q){var x=clone(q);x.pid=pid;x.part='A';s.push(x);});
+  s.push({t:'intro',pid:pid,key:'B'});
+  P.statements.forEach(function(txt,i){s.push({t:'scale',pid:pid,part:'B',id:'s'+(i+1),q:txt});});
+  s.push({t:'intro',pid:pid,key:'C'});
+  P.C.forEach(function(q){var x=clone(q);x.pid=pid;x.part='C';s.push(x);});
+  s.push({t:'submit',pid:pid,noBack:true});
+  return s;
+}
+function startRun(queue){
+  S.queue=queue; S.steps=[]; S.i=0; S.err=''; S.view='run'; S.sendState=''; S.results={}; S.ans={aefp:{},rsd:{}};
+  queue.forEach(function(pid,k){S.steps=S.steps.concat(buildSteps(pid,k===0));});
+  render();
+}
+function tryCode(code){
+  code=(code||'').trim().toUpperCase();
+  if(!code || !C.accessCode || String(C.accessCode).toUpperCase()!==code) return false;
+  startRun(['aefp','rsd']);
+  return true;
+}
+
+/* ---------- views ---------- */
+function viewLanding(){
+  var h='<h2 class="bf-title">The BrainFirst Screening Bundle</h2>';
+  h+='<p class="bf-lead">Our goal is to help 1,000 people see themselves more clearly. Be one of them.</p>';
+  h+='<p>The BrainFirst Screening Bundle gives you a clear, private picture of how your mind works, in about 25 minutes:</p>';
+  h+='<ul class="bf-gets">';
+  h+='<li><span aria-hidden="true">\u2705</span><span><strong>Attention and Executive Function Profile.</strong> See where focus, starting, planning, time and follow-through break down, and where you are already strong.</span></li>';
+  h+='<li><span aria-hidden="true">\u2705</span><span><strong>Rejection Sensitivity Profile.</strong> Understand why criticism and being left out hurt so much, and what you tend to do next.</span></li>';
+  h+='<li><span aria-hidden="true">\u2705</span><span><strong>Your personal report for each.</strong> 2 to 3 pages, written for you by the founder of BrainFirst Nigeria, a licensed therapist.</span></li>';
+  h+='<li><span aria-hidden="true">\u2705</span><span><strong>A 20-minute one-on-one debrief</strong> with the founder to turn your results into a plan.</span></li>';
+  h+='<li><span aria-hidden="true">\u2705</span><span><strong>A simple 2-week action plan.</strong> Small experiments built around your results.</span></li>';
+  h+='</ul>';
+  h+='<div class="bf-bonus"><span aria-hidden="true">\uD83C\uDF81</span><span><strong>Free bonus:</strong> a 30-minute one-on-one consultation with the founder of BrainFirst Nigeria, your therapist (worth \u20A610,000). Book within 14 days of your debrief.</span></div>';
+  h+='<p class="bf-price">Just '+esc(C.price)+'. <span class="bf-small">Your reports reach you within 48 hours.</span></p>';
+  h+='<p>You move straight from the first profile to the second, with nothing more to pay.</p>';
+  h+='<p class="bf-small">This is not a diagnosis. It is the clearest first step towards understanding yourself, so you can stop guessing and start doing what works for your brain.</p>';
+  h+='<div class="bf-actions">';
+  if(!C.requirePayment) h+='<button class="bf-btn" data-act="start">Start the bundle</button>';
+  else if(C.paymentLink) h+='<a class="bf-btn" href="'+esc(C.paymentLink)+'" target="_blank" rel="noopener">Get the bundle for '+esc(C.price)+'</a>';
+  else h+='<button class="bf-btn" disabled>Payment link not set</button>';
+  h+='</div>';
+  if(C.requirePayment){
+    h+='<h3>Already paid?</h3><p class="bf-small">Enter the access code you received after payment.</p>';
+    h+='<div class="bf-code"><input class="bf-field" id="bf-code" type="text" autocomplete="off" autocapitalize="characters" placeholder="Access code" aria-label="Access code"><button class="bf-btn alt" data-act="unlock">Unlock</button></div>';
+    if(S.codeErr) h+='<p class="bf-err" role="alert">'+esc(S.codeErr)+'</p>';
+  }
+  return h;
+}
+function introFor(st){
+  var P=PROD[st.pid];
+  if(st.key==='next') return {title:'Next: '+P.title,body:'<p>Your first profile is complete. This second one is included in your payment, and your consent and contact details carry over. It takes '+esc(P.minutes)+'.</p>',btn:'Continue'};
+  if(st.key==='A') return {title:'First, a few questions about you',body:'<p>These give your report its context and are not scored. Questions marked optional can be skipped.</p>',btn:'Start'};
+  if(st.key==='B'){
+    var scale='<ul style="list-style:none;padding:0">'+SCALE.map(function(x){return '<li><strong>'+x[0]+'</strong> = '+x[1]+'</li>';}).join('')+'</ul>';
+    return {title:'How often has each of these been true for you?',body:'<p>Think about the last 6 months. Every statement is about you, in your everyday life. Score each one:</p>'+scale+'<p class="bf-small">You can also press 0, 1, 2 or 3 on your keyboard.</p>',btn:'Begin statements'};
+  }
+  if(step_isAEFP(st)) return {title:'Childhood and other explanations',body:'<p>ADHD begins in childhood, so these questions help the report say whether the pattern is long-standing. If you cannot remember, choose "I do not remember", or ask a parent, a sibling, or look at old school reports. A skipped question is not counted against you.</p>',btn:'Continue'};
+  return {title:'A recent painful moment',body:'<p>These five questions are not scored. They make your report personal and give us something real to work with in your debrief.</p><p>Answer only as much as you want. You can skip any question.</p>',btn:'Continue'};
+}
+function step_isAEFP(st){return st.pid==='aefp';}
+
+function progress(st){
+  var tot=0,idx=0,k;
+  for(k=0;k<S.steps.length;k++){var x=S.steps[k]; if(x.pid===st.pid && x.part){tot++; if(k<=S.i) idx++;}}
+  return {idx:idx,tot:tot};
+}
+function shell(st,inner){
+  var pg=progress(st), canBack=!st.noBack && !(C.autoStart && S.i===0);
+  var stage = st.part ? PROD[st.pid].stages[st.part] : '';
+  var count = st.part ? (pg.idx+' of '+pg.tot) : '';
+  var pct = pg.tot? Math.round(pg.idx/pg.tot*100):0;
+  var top='<div class="bf-top">'+(canBack?'<button class="bf-link" data-act="back">Back</button>':'<span></span>')+'<span class="bf-stage">'+esc(stage)+(count?(stage?', ':'')+esc(count):'')+'</span></div><div class="bf-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+pct+'"><i style="width:'+pct+'%"></i></div>';
+  var err=S.err?'<p class="bf-err" role="alert">'+esc(S.err)+'</p>':'';
+  return '<div class="bf-card">'+top+inner+err+'</div>';
+}
+function opts(st,cur){
+  var h='<div class="bf-opts" role="group" aria-label="Answer options">';
+  if(st.t==='scale'){
+    SCALE.forEach(function(x){h+='<button class="bf-opt" data-act="pick" data-v="'+x[0]+'" aria-pressed="'+(cur===x[0])+'"><span class="n">'+x[0]+'</span>'+x[1]+'</button>';});
+    if(st.dk) h+='<button class="bf-opt dk" data-act="pick" data-v="dk" aria-pressed="'+(cur==='dk')+'"><span class="n">?</span>I do not remember</button>';
+  } else {
+    st.o.forEach(function(o,i){
+      var on = st.t==='multi' ? (cur||[]).indexOf(o)>-1 : cur===o;
+      h+='<button class="bf-opt" data-act="'+(st.t==='multi'?'toggle':'pick')+'" data-v="'+i+'" aria-pressed="'+on+'">'+esc(o)+'</button>';
+    });
+  }
+  return h+'</div>';
+}
+function viewStep(){
+  var st=S.steps[S.i], cur=S.ans[st.pid][st.id], h;
+  if(st.t==='consent'){
+    h='<h2 class="bf-q" tabindex="-1" data-focus>Before you start</h2><div class="bf-consent"><p style="margin:0">'+esc(CONSENT.replace('[email]',C.contactEmail))+'</p></div>';
+    h+='<label class="bf-check"><input type="checkbox" id="bf-agree"'+(S.consent.agree?' checked':'')+'><span>I agree to the above.</span></label>';
+    h+='<label class="bf-check"><input type="checkbox" id="bf-research"'+(S.consent.research?' checked':'')+'><span>'+esc(RESEARCH)+'</span></label>';
+    h+='<div class="bf-nav"><button class="bf-btn" data-act="next">Continue</button></div>';
+    return shell(st,h);
+  }
+  if(st.t==='contact'){
+    h='<h2 class="bf-q" tabindex="-1" data-focus>Where should we send your report?</h2><p class="bf-hint">We use your name and email to prepare your report and to arrange your debrief.</p>';
+    h+='<label class="bf-lab" for="bf-name">Your name</label><input class="bf-field" id="bf-name" type="text" autocomplete="name" value="'+esc(S.contact.name)+'">';
+    h+='<label class="bf-lab" for="bf-email">Your email</label><input class="bf-field" id="bf-email" type="email" autocomplete="email" value="'+esc(S.contact.email)+'">';
+    h+='<div class="bf-nav"><button class="bf-btn" data-act="next">Continue</button></div>';
+    return shell(st,h);
+  }
+  if(st.t==='intro'){
+    var it=introFor(st);
+    h='<h2 class="bf-q" tabindex="-1" data-focus>'+esc(it.title)+'</h2>'+it.body+'<div class="bf-nav"><button class="bf-btn" data-act="next">'+esc(it.btn)+'</button></div>';
+    return shell(st,h);
+  }
+  if(st.t==='scale'){
+    h='<p class="bf-hint" style="margin-bottom:.6rem">Over the last 6 months, how often has this been true for you?</p><h2 class="bf-q" tabindex="-1" data-focus>'+esc(st.q)+'</h2>'+opts(st,cur);
+    if(st.dk) h+='<div class="bf-nav"><button class="bf-link" data-act="skip">Skip this question</button></div>';
+    return shell(st,h);
+  }
+  if(st.t==='choice'||st.t==='multi'){
+    h='<h2 class="bf-q" tabindex="-1" data-focus>'+esc(st.q)+'</h2>'+(st.hint?'<p class="bf-hint">'+esc(st.hint)+'</p>':'')+(st.optional?'<p class="bf-hint">Optional</p>':'')+opts(st,cur);
+    h+='<div class="bf-nav">'+(st.t==='multi'?'<button class="bf-btn" data-act="next">Next</button>':'')+((st.optional||st.skip)?'<button class="bf-link" data-act="skip">Skip</button>':'')+'</div>';
+    return shell(st,h);
+  }
+  if(st.t==='text'){
+    var v=cur||'', canSkip=st.optional||st.skip;
+    h='<h2 class="bf-q" tabindex="-1">'+esc(st.q)+'</h2>'+(canSkip?'<p class="bf-hint">'+(st.skip?'You can skip this question.':'Optional')+'</p>':'');
+    h+='<label class="bf-lab" for="bf-text" style="position:absolute;left:-9999px">Your answer</label><textarea class="bf-field" id="bf-text" maxlength="1500" data-focus>'+esc(v)+'</textarea>';
+    h+='<div class="bf-nav"><button class="bf-btn" data-act="next">'+((canSkip&&!v.trim())?'Skip':'Next')+'</button></div>';
+    return shell(st,h);
+  }
+  if(st.t==='submit'){
+    if(S.sendState==='error'){
+      h='<h2 class="bf-q" tabindex="-1" data-focus>We could not send your answers</h2><p>Check your connection and try again. Your answers are still on this page, so please do not close it.</p><div class="bf-nav"><button class="bf-btn" data-act="retry">Try again</button></div>';
+    } else {
+      h='<h2 class="bf-q" tabindex="-1" data-focus>Sending your answers</h2><p>One moment.</p>';
+      if(S.sendState===''){S.sendState='sending'; setTimeout(function(){doSubmit(st.pid);},0);}
+    }
+    return shell({pid:st.pid,noBack:true},h);
+  }
+  return '';
+}
+function safetyBlock(){
+  var h='<div class="bf-safety"><p>'+esc(SAFETY)+'</p>';
+  if(C.emergencyContacts) h+='<p>'+esc(C.emergencyContacts).replace(/\n/g,'<br>')+'</p>';
+  return h+'</div>';
+}
+function viewDone(){
+  var first=(S.contact.name||'').trim().split(/\s+/)[0];
+  var h='<div class="bf-card"><h2 class="bf-q" tabindex="-1" data-focus>Thank you'+(first?', '+esc(first):'')+'</h2>';
+  h+='<p>Your answers have been received. Your personal report will be ready within 48 hours, followed by your one-on-one session with the founder of BrainFirst Nigeria.</p>';
+  if(C.bookingLink) h+='<p><a class="bf-btn" href="'+esc(C.bookingLink)+'" target="_blank" rel="noopener">Book your one-on-one session</a></p>';
+  if(S.local) h+='<p class="bf-small">Your answers are ready. Save them and send the file to '+esc(C.contactEmail)+'.</p><p><button class="bf-btn alt" data-act="download">Save my answers</button></p>';
+  h+=safetyBlock();
+  h+='<p class="bf-small" style="margin-top:1.4rem">'+esc(DISCLAIMER)+'</p></div>';
+  if(PREVIEW){
+    S.queue.forEach(function(pid){var r=S.results[pid]; if(r) h+='<div class="bf-card bf-report"><p class="bf-small">Owner preview (not shown to clients)</p>'+repHTML(r.report)+'</div>';});
+  }
+  return h;
+}
+
+/* ---------- submit ---------- */
+function freeText(pid,a){
+  var ids = pid==='aefp'?['A7','A9','A10']:['A5','C1','C2','C3','C4'];
+  return ids.map(function(id){return a[id]||'';}).join(' ');
+}
+function buildPayload(pid){
+  var a=S.ans[pid], r, rep, sm;
+  if(pid==='aefp'){r=computeAEFP(a); rep=reportAEFP(r,a); sm=aefpSummary(r);}
+  else {r=computeRSD(a); rep=reportRSD(r,a); sm=rsdSummary(r);}
+  return {submittedAt:new Date().toISOString(),product:pid,productTitle:PROD[pid].title,name:S.contact.name.trim(),email:S.contact.email.trim(),
+    researchConsent:!!S.consent.research,reviewFirst:DISTRESS.test(freeText(pid,a)),summary:sm,answers:a,reportText:repText(rep),report:rep};
+}
+function post(p){
+  if(!C.submitEndpoint){S.local=true; if(window.console) console.warn('BrainFirst: submitEndpoint is empty, answers were not sent anywhere.'); return Promise.resolve();}
+  var body=clone(p); delete body.report;
+  return fetch(C.submitEndpoint,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(body)});
+}
+function doSubmit(pid){
+  var p=buildPayload(pid); S.results[pid]=p;
+  post(p).then(function(){
+    S.sendState=''; S.i++;
+    if(S.i>=S.steps.length) S.view='done';
+    render();
+  }).catch(function(){S.sendState='error'; render();});
+}
+function download(){
+  var data=S.queue.map(function(pid){var x=clone(S.results[pid]); delete x.report; return x;});
+  var blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='brainfirst-answers.json'; document.body.appendChild(a); a.click(); document.body.removeChild(a);
+}
+
+/* ---------- render and events ---------- */
+function render(){
+  var h = S.view==='landing' ? viewLanding() : (S.view==='done' ? viewDone() : viewStep());
+  root.innerHTML='<div class="bf-wrap">'+h+'</div>';
+  if(S.first){S.first=false; return;}
+  var r=root.getBoundingClientRect(); if(r.top<0) root.scrollIntoView();
+  var f=root.querySelector('[data-focus]'); if(f && f.focus) f.focus({preventScroll:true});
+}
+function go(d){
+  S.err='';
+  if(d<0){ do{S.i--;}while(S.i>0 && S.steps[S.i].t==='intro' && S.steps[S.i].key!=='next'); }
+  else S.i++;
+  render();
+}
+function advanceSoon(st){setTimeout(function(){ if(S.view==='run' && S.steps[S.i]===st) go(1); },260);}
+
+function onNext(){
+  var st=S.steps[S.i];
+  if(!st || st.t==='submit') return;
+  if(st.t==='consent'){ if(!S.consent.agree){S.err='Please tick the box to agree before you continue.'; return render();} }
+  if(st.t==='contact'){
+    if(!S.contact.name.trim()){S.err='Please enter your name.'; return render();}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(S.contact.email.trim())){S.err='Please enter a valid email address.'; return render();}
+  }
+  if(st.t==='multi'){ var v=S.ans[st.pid][st.id]||[]; if(!v.length){S.err='Choose at least one option, or go back.'; return render();} }
+  if(st.t==='text'){
+    var t=(S.ans[st.pid][st.id]||'').trim();
+    if(!t && !(st.optional||st.skip)){S.err='Please write a few words before you continue.'; return render();}
+    S.ans[st.pid][st.id]=t;
+  }
+  go(1);
+}
+root.addEventListener('click',function(e){
+  var b=e.target.closest?e.target.closest('[data-act]'):null; if(!b||!root.contains(b)) return;
+  var act=b.getAttribute('data-act'), st=S.steps[S.i];
+  if(act==='start'){ return startRun(['aefp','rsd']); }
+  if(act==='unlock'){ var inp=document.getElementById('bf-code'); if(!tryCode(inp&&inp.value)){S.codeErr='That code was not recognised. Check it and try again.'; render();} return; }
+  if(act==='download') return download();
+  if(act==='retry'){S.sendState=''; return render();}
+  if(act==='back'){ if(S.i===0){S.view='landing'; S.err=''; return render();} return go(-1); }
+  if(act==='next') return onNext();
+  if(!st) return;
+  if(act==='skip'){ S.ans[st.pid][st.id]=(st.t==='multi'?[]:null); return go(1); }
+  if(act==='pick'){
+    var v=b.getAttribute('data-v');
+    if(st.t==='scale') S.ans[st.pid][st.id]=(v==='dk'?'dk':parseInt(v,10));
+    else S.ans[st.pid][st.id]=st.o[parseInt(v,10)];
+    S.err=''; render(); return advanceSoon(st);
+  }
+  if(act==='toggle'){
+    var o=st.o[parseInt(b.getAttribute('data-v'),10)], arr=S.ans[st.pid][st.id]||[], ix=arr.indexOf(o);
+    if(ix>-1) arr.splice(ix,1); else if(arr.length>=st.max){S.err='You can choose up to '+st.max+'.'; S.ans[st.pid][st.id]=arr; return render();} else arr.push(o);
+    S.ans[st.pid][st.id]=arr; S.err=''; return render();
+  }
+});
+root.addEventListener('input',function(e){
+  var t=e.target, st=S.steps[S.i];
+  if(t.id==='bf-name') S.contact.name=t.value;
+  else if(t.id==='bf-email') S.contact.email=t.value;
+  else if(t.id==='bf-text' && st){
+    S.ans[st.pid][st.id]=t.value;
+    var nb=root.querySelector('[data-act="next"]'); if(nb) nb.textContent=((st.optional||st.skip)&&!t.value.trim())?'Skip':'Next';
+  }
+});
+root.addEventListener('change',function(e){
+  if(e.target.id==='bf-agree') S.consent.agree=e.target.checked;
+  if(e.target.id==='bf-research') S.consent.research=e.target.checked;
+});
+root.addEventListener('keydown',function(e){
+  var st=S.view==='run'?S.steps[S.i]:null; if(!st) return;
+  if(st.t==='scale' && /^[0-3]$/.test(e.key) && !e.ctrlKey && !e.metaKey && !e.altKey){
+    S.ans[st.pid][st.id]=parseInt(e.key,10); S.err=''; render(); advanceSoon(st); e.preventDefault(); return;
+  }
+  if(e.key==='Enter' && e.target && (e.target.id==='bf-name'||e.target.id==='bf-email')){e.preventDefault(); onNext();}
+});
+
+/* ---------- start ---------- */
+if(C.autoStart){ startRun(['aefp','rsd']); } else { render(); }
+
+if(window.__BF_TEST__){window.__bf={computeAEFP:computeAEFP,computeRSD:computeRSD,reportAEFP:reportAEFP,reportRSD:reportRSD,repText:repText,buildSteps:buildSteps};}
+})();
+</script>
+</div>
+</main>
+</body>
+</html>
